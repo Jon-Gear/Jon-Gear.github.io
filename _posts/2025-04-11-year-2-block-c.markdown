@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Y2C: Custom Engine"
+image: /assets/images/sample.jpg
 date: 2025-04-11
 categories: projects
 author: Zhangir Nurmukhambetov

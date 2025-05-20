@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Y2A: Custom Engine"
+image: /assets/images/sample.jpg
 date: 2024-11-01
 categories: projects
 author: Zhangir Nurmukhambetov

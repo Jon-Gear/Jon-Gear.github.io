@@ -30,3 +30,75 @@
 .social-links i {
   font-size: 1.2rem;
 }
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-item {
+  /* no extra styles needed here */
+}
+
+.project-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 200px;            /* box height */
+  border-radius: 12px;
+  background-size: cover;   /* make the background image cover the box */
+  background-position: center;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.project-box:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  color: #fff; /* pure white for max contrast */
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.9), /* stronger dark shadow */
+    0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Optional: add a dark overlay for better text contrast */
+.project-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.05); /* darker overlay for better contrast */
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.post-image-wrapper {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}

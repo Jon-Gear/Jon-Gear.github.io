@@ -6,6 +6,12 @@ layout: default
   <a href="javascript:history.back()" class="back-button">← Back</a>
 </p>
 
+{% if page.image %}
+  <div class="post-image-wrapper">
+    <img src="{{ page.image }}" alt="Preview image for {{ page.title }}" class="post-image" />
+  </div>
+{% endif %}
+
 <h1>{{ page.title }}</h1>
 
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
