@@ -1,17 +1,23 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
 
-This is a landing page
+# About Me
 
-<h1>Blog Posts</h1>
+My name is Zhangir Nurmukhambetov. 
+
+I am an Engine & Tools Programmer.
+
+[Read more...](/about/)
+
+# My Projects
 
 <ul>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}
-    </li>
+    {% if post.categories contains "projects" %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

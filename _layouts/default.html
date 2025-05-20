@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
@@ -38,6 +39,17 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+
+        {% if site.navigation %}
+        <nav>
+          <ul class="navbar">
+            {% for item in site.navigation %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% endif %}
+
       </header>
       <section>
 
@@ -45,10 +57,23 @@
 
       </section>
       <footer>
-        {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+
+        {% if site.social %}
+        <div class="social-links">
+          <ul>
+            {% if site.social.github %}
+              <li><a href="{{ site.social.github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            {% endif %}
+            {% if site.social.linkedin %}
+              <li><a href="{{ site.social.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            {% endif %}
+            {% if site.social.telegram %}
+              <li><a href="{{ site.social.telegram }}" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a></li>
+            {% endif %}
+          </ul>
+        </div>
         {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
