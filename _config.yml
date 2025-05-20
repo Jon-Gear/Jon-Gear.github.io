@@ -31,7 +31,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 social:
-  github: "https://github.com/Jon-Gear"
+  github: "https://github.com/jon-gear"
   linkedin:  "https://linkedin.com/in/jon-gear"
   telegram: "https://t.me/JonGearBlog"
 
