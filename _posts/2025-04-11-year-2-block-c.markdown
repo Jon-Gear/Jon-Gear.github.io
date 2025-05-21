@@ -62,3 +62,13 @@ This system became a foundational feature for level editing, versioning, and rap
 
 ### 🧩 Engineering Maturity & Team Collaboration
 Working within a team required strong modular design, clean API structures, and consistent Git-based workflows. I restructured the terrain editor inherited from a solo prototype to be scalable, maintainable, and team-friendly. Clear naming, encapsulation, and extensibility were prioritized throughout.
+
+## Reflections
+This project significantly deepened my understanding of modern rendering pipelines, GPU compute workloads, scene architecture, and real-world software engineering practices. 
+
+Key personal milestones:
+- Learned and applied compute shaders for the first time.
+- Built extensible brush systems and GPU-driven editing workflows.
+- Developed a full runtime reflection system using EnTT Meta.
+- Learned to work collaboratively within a version-controlled, cross-feature team.
+
