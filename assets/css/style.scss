@@ -160,25 +160,12 @@
 }
 
 .resume-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white; /* Text color */
   text-decoration: none;
-  border-radius: 8px;
+  color: #333;
   font-weight: bold;
-  transition: transform 0.2s, background-color 0.2s, color 0.2s;
-}
-
-.resume-button:hover {
-  background-color: #ffffff;
-  color: white; /* Prevent text from turning blue */
-  transform: translateY(-2px);
-}
-
-.resume-button,
-.resume-button:visited,
-.resume-button:active {
-  color: white;
-  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
 }

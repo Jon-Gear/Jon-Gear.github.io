@@ -25,13 +25,11 @@
         <h1><a href="{{ "/" | absolute_url }}">{{ site.name | default: site.github.repository_name }}</a></h1>
         <h2>{{ site.profession }}</h2>
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        
-        <a href="{{ '/assets/resume.pdf' | relative_url }}" class="resume-button" download>
-          <i class="fa-solid fa-file-arrow-down"></i> 
-          My Resume <br> 
-          Open for a 6-12 month internship starting September 2025
-        </a>
+        <p>2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.</p>
+
+        <a href="/assets/Zhangir_CV.pdf" class="resume-button" draggable="false" selectable="false"><i class="fa-solid fa-file-arrow-down"></i>Resume</a>
+
+        <p>Open for a 6-12 month internship starting September 2025</p>
 
         {% if site.social %}
         <div class="social-links">
@@ -47,10 +45,6 @@
             {% endif %}         
           </ul>
         </div>
-        {% endif %}
-
-        {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
       </header>

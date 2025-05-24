@@ -5,7 +5,9 @@ layout: default
 # Zhangir Nurmukhambetov
 ## Engine & Tools Programmer
 
-[Photo]
+![image1](../assets/images/profile.png)
+
+
 
 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
