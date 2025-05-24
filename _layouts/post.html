@@ -6,20 +6,43 @@ layout: default
   <a href="javascript:history.back()" class="back-button">← Back</a>
 </p>
 
-{% if page.image %}
-  <div class="post-image-wrapper">
-    <img src="{{ page.image }}" alt="Preview image for {{ page.title }}" class="post-image" />
+
+<div class="project-pill">
+  {% if page.image %}
+    <div class="post-image-wrapper">
+      <img src="{{ page.image }}" alt="Preview image for {{ page.title }}" class="post-image" />
+    </div>
+  {% endif %}
+
+  <div class="project-info">
+    <h1>{{ page.title }}</h1>
+    <p class="project-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+
+    {% if page.description %}
+      <p class="project-description">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.contributions %}
+      <p><strong>My Contributions:</strong> {{ page.contributions }}</p>
+    {% endif %}
+
+    {% if page.tools %}
+      <p><strong>Engine/Tools:</strong> {{ page.tools }}</p>
+    {% endif %}
+
+    {% if page.team_size %}
+      <p><strong>Team Size:</strong> {{ page.team_size }}</p>
+    {% endif %}
+
+    {% if page.platforms %}
+      <p><strong>Platforms:</strong> {{ page.platforms }}</p>
+    {% endif %}
+
+    {% if page.duration %}
+      <p><strong>Duration:</strong> {{ page.duration }}</p>
+    {% endif %}
+
   </div>
-{% endif %}
-
-<h1>{{ page.title }}</h1>
-
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-<p class="view">by {{ page.author | default: site.author }}</p>
-
+</div>
 
 {{content}}
-
-{% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}

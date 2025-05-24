@@ -34,14 +34,43 @@ Currently looking for a position in engine programming and/or content creation t
 
 # My Projects
 
-<ul class="project-list">
+<div class="project-list">
   {% for post in site.posts %}
     {% if post.categories contains "projects" %}
-      <li class="project-item">
-        <a href="{{ post.url }}" class="project-box" style="background-image: url('{{ post.image }}');">
-          <h2 class="project-title">{{ post.title }}</h2>
-        </a>
-      </li>
+      <a href="{{ post.url }}" class="project-card-link">
+        <div class="project-card">
+          {% if post.preview_image %}
+            <img src="{{ post.preview_image }}" alt="Preview of {{ post.title }}">
+          {% endif %}
+
+          <h2>{{ post.title }}</h2>
+          <p><strong>Date:</strong> {{ post.date | date: "%B %-d, %Y" }}</p>
+
+          {% if post.description %}
+            <p>{{ post.description }}</p>
+          {% endif %}
+
+          {% if post.contributions %}
+            <p><strong>My Contributions:</strong> {{ post.contributions }}</p>
+          {% endif %}
+
+          {% if post.tools %}
+            <p><strong>Engine/Tools:</strong> {{ post.tools }}</p>
+          {% endif %}
+
+          {% if post.team_size %}
+            <p><strong>Team Size:</strong> {{ post.team_size }}</p>
+          {% endif %}
+
+          {% if post.platforms %}
+            <p><strong>Platforms:</strong> {{ post.platforms }}</p>
+          {% endif %}
+
+          {% if post.duration %}
+            <p><strong>Duration:</strong> {{ post.duration }}</p>
+          {% endif %}
+        </div>
+      </a>
     {% endif %}
   {% endfor %}
-</ul>
+</div>

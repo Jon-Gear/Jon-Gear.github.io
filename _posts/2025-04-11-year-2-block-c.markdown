@@ -1,24 +1,74 @@
 ---
 layout: post
 title: "Fire Ant Engine: Custom C++ Strategy Game Engine"
-image: /assets/images/sample.jpg
 date: 2025-04-11
-categories: projects
-author: Zhangir Nurmukhambetov
+categories: [projects]
+image: /assets/images/sample.jpg
+description: "Fire Ant Engine is a continuation of my custom Terrain Editor. The team was joined by seven talented programmers. The project features a prefab system, a terrain editor, flow-fields for AI agent navigation, an in-engine UI editor, optimizations which allowed a support for a large terrain map and many units, and support on Windows and Nintendo Switch."
+contributions: "Terrain Editor | Terrain Rendering | Height Editing | Texture Editing | Prop Placement | Scene Serialization | Prefabs"
+tools: "C++, OpenGL, GLSL (Compute & Tesselation Shaders), EnTT, Cereal, ImGui"
+team_size: "7 Programmers"
+platforms: "Windows | Nintendo Switch"
+duration: "8 Weeks (Feb 2025 - Apr 2025)"
 ---
+
+## My Contributions
+
+### Terrain Editor
+
+[Image]
+
+#### Key Features & Challenges
+
+[Image]
+
+### Terrain Rendering
+
+[Image]
+
+#### Key Features & Challenges
+
+
+### Height Brush
+
+[Image]
+
+#### Key Features & Challenges
+
+### Texture Brush
+
+[Image]
+
+#### Key Features & Challenges
+
+
+### Prop Brush
+
+[Image]
+
+#### Key Features & Challenges
+
+
+### Plateu Brush
+
+[Image]
+
+#### Key Features & Challenges
+
+### Prefab System
+
+[Image]
+
+#### Key Features & Challenges
+
+
+
+
 
 ## Summary Block
 
-Team - 7 Programmers
-
-Roles - Engine & Tools Programmer, Rendering Programmer
 
 Tasks - Terrain Editor, Terrain Rendering Pass, GPU-accelerated Terrain Editing (Height/Texture/Prop/Plateau Brushes), Scene Serialization & Loading System
-
-Tech - Custom Strategy Game Engine, C++, OpenGL, GLSL (Compute & Tessellation Shaders), EnTT, Cereal, ImGui
-
-Dates & Times: 
-8 Weeks (Feb 2025 - Apr 2025)
 
 Features:
 - Terrain Editor with Modular Brush Architecture
@@ -30,7 +80,6 @@ Features:
 - In-Editor Asset Drag & Drop, Scene Saving/Loading
 
 ## Detail
-Fire Ant Engine is a custom C++ strategy game engine developed in a team of 7 programmers during my second year at Breda University of Applied Sciences. 
 
 My role focused on the core engine & tools development and rendering features, with major contributions to terrain editing systems and a runtime scene serialization framework.
 
