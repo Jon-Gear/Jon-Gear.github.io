@@ -25,11 +25,13 @@
         <h1><a href="{{ "/" | absolute_url }}">{{ site.name | default: site.github.repository_name }}</a></h1>
         <h2>{{ site.profession }}</h2>
 
+        <a href="mailto:{{ site.social.gmail }}" target="_blank"><i class="fa-solid fa-envelope"></i> {{site.social.gmail}}</a>
+
         <p>2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.</p>
 
-        <a href="/assets/Zhangir_CV.pdf" class="resume-button" draggable="false" selectable="false"><i class="fa-solid fa-file-arrow-down"></i>Resume</a>
-
         <p>Open for a 6-12 month internship starting September 2025</p>
+        
+
 
         {% if site.social %}
         <div class="social-links">
@@ -41,8 +43,13 @@
               <li><a href="{{ site.social.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
             {% endif %}
             {% if site.social.gmail %}
-              <li><a href="mailto:{{ site.social.gmail }}" target="_blank"><i class="fa-solid fa-envelope"></i> Gmail</a></li>
+             
             {% endif %}         
+            {% if site.social.gmail %}
+              <li><a href="/assets/Zhangir_CV.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i> Resume</a></li>
+            {% endif %}         
+            
+
           </ul>
         </div>
         {% endif %}
