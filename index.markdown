@@ -36,40 +36,43 @@ Currently looking for a position in engine programming and/or content creation t
   {% assign sorted_projects = site.projects | sort: "date" | reverse %}
   {% for project in sorted_projects %}
     {% if project.categories contains "projects" %}
-      <a href="{{ project.url }}" class="project-card-link">
-        <div class="project-card">
-          {% if project.image %}
+      <div class="project-card">
+        {% if project.image %}
+          <a href="{{ project.url }}" class="project-image-link">
             <img src="{{ project.image }}" alt="Preview of {{ project.title }}">
-          {% endif %}
+          </a>
+        {% endif %}
 
-          <h2>{{ project.title }}</h2>
-          <p><strong>Date:</strong> {{ project.date | date: "%B %-d, %Y" }}</p>
+        <h2>
+          <a href="{{ project.url }}" class="project-title-link">{{ project.title }}</a>
+        </h2>
 
-          {% if project.description %}
-            <p>{{ project.description }}</p>
-          {% endif %}
+        <p><strong>Date:</strong> {{ project.date | date: "%B %-d, %Y" }}</p>
 
-          {% if project.contributions %}
-            <p><strong>My Contributions:</strong> {{ project.contributions }}</p>
-          {% endif %}
+        {% if project.description %}
+          <p>{{ project.description }}</p>
+        {% endif %}
 
-          {% if project.tools %}
-            <p><strong>Engine/Tools:</strong> {{ project.tools }}</p>
-          {% endif %}
+        {% if project.contributions %}
+          <p><strong>My Contributions:</strong> {{ project.contributions }}</p>
+        {% endif %}
 
-          {% if project.team_size %}
-            <p><strong>Team Size:</strong> {{ project.team_size }}</p>
-          {% endif %}
+        {% if project.tools %}
+          <p><strong>Engine/Tools:</strong> {{ project.tools }}</p>
+        {% endif %}
 
-          {% if project.platforms %}
-            <p><strong>Platforms:</strong> {{ project.platforms }}</p>
-          {% endif %}
+        {% if project.team_size %}
+          <p><strong>Team Size:</strong> {{ project.team_size }}</p>
+        {% endif %}
 
-          {% if project.duration %}
-            <p><strong>Duration:</strong> {{ project.duration }}</p>
-          {% endif %}
-        </div>
-      </a>
+        {% if project.platforms %}
+          <p><strong>Platforms:</strong> {{ project.platforms }}</p>
+        {% endif %}
+
+        {% if project.duration %}
+          <p><strong>Duration:</strong> {{ project.duration }}</p>
+        {% endif %}
+      </div>
     {% endif %}
   {% endfor %}
 </div>
