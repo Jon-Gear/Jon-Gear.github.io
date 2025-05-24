@@ -31,13 +31,19 @@ duration: "8 Weeks (Feb 2025 - Apr 2025)"
 
 ### Height Brush
 
-[Image]
+![image1](../../assets/images/Y2C/height_brush_raise.gif)
+
+![image1](../../assets/images/Y2C/height_brush_lower.gif)
+
+
 
 #### Key Features & Challenges
 
 ### Texture Brush
 
-[Image]
+![image1](../../assets/images/Y2C/texture_brush.gif)
+
+
 
 #### Key Features & Challenges
 
@@ -51,7 +57,8 @@ duration: "8 Weeks (Feb 2025 - Apr 2025)"
 
 ### Plateu Brush
 
-[Image]
+![image1](../../assets/images/Y2C/plateau_brush.gif)
+
 
 #### Key Features & Challenges
 
