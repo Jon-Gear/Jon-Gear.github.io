@@ -18,7 +18,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
 
 <div class="skills-bar">
   <div class="skill-icon">
-    <img src=".../assets/images/icons/cpp.svg" alt="C++" />
+    <img src="assets/images/icons/cpp.svg" alt="C++" />
     <div class="tooltip">
       C++<br>
       8 years of experience in C++
@@ -26,7 +26,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/vs.png" alt="Visual Studio" />
+    <img src="assets/images/icons/vs.png" alt="Visual Studio" />
     <div class="tooltip">
       Visual Studio<br>
       4 years of experience. Familiar with debugging, profiling, and project configuration tools
@@ -34,14 +34,14 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/vscode.png" alt="Visual Studio Code" />
+    <img src="assets/images/icons/vscode.png" alt="Visual Studio Code" />
     <div class="tooltip">
       Visual Studio Code<br>
     </div>
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/github-light.svg" alt="Github" />
+    <img src="assets/images/icons/github-light.svg" alt="Github" />
     <div class="tooltip">
       Github <br> 
       3 years of experience. Experienced with its pipelines and used them in a team environment, including reviews, automated checks, and managing branches.
@@ -49,7 +49,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/perforce.png" alt="Perforce" />
+    <img src="assets/images/icons/perforce.png" alt="Perforce" />
     <div class="tooltip">
       Perforce <br> 
       2 years of experience with Perforce and P4V in a collaborative team environment, including active participation in code reviews.
@@ -57,7 +57,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/unreal.svg" alt="Unreal Engine" />
+    <img src="assets/images/icons/unreal.svg" alt="Unreal Engine" />
     <div class="tooltip">
       Unreal Engine <br>
       Familiar working with Blueprints and in C++.
@@ -65,7 +65,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
   </div>
 
   <div class="skill-icon">
-    <img src=".../assets/images/icons/unity.svg" alt="Unreal Engine" />
+    <img src="assets/images/icons/unity.svg" alt="Unreal Engine" />
     <div class="tooltip">
       Unity C# <br>
       Spend my free time using Unity by making a side passion project.
