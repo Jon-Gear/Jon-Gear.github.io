@@ -50,7 +50,8 @@ duration: "8 Weeks (Feb 2025 - Apr 2025)"
 
 ### Prop Brush
 
-[Image]
+![image1](../../assets/images/Y2C/prop_brush.gif)
+
 
 #### Key Features & Challenges
 
