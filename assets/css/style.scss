@@ -58,12 +58,6 @@
   margin-bottom: 0.5rem;
 }
 
-.project-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
 /* Remove link styling from everything inside the card */
 .project-card-link * {
   color: inherit !important;
@@ -156,4 +150,28 @@
   text-decoration: none;
   font-size: 0.9rem;
   color: #333;
+}
+
+.rounded-logo {
+
+  border-radius: 20%;  /* Rounded corners — adjust % for roundness */
+  object-fit: cover;   /* Ensures the image fills the box without distortion */
+  display: block;
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white; /* Text color */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.resume-button:hover {
+  background-color: #1b88fd;
+  color: white; /* Prevent text from turning blue */
+  transform: translateY(-2px);
 }

@@ -7,9 +7,9 @@ layout: default
 
 [Photo]
 
-2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies. 
+2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
-I am skilled in **Engine and Tools programming** with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I'm passionate about **solving technical challenges** and continuosly improving my skills. 
+I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuosly improving my skills.
 
 Proficient in C++. Additional experience with Unreal, Unity, and Godot.
 
@@ -35,39 +35,40 @@ Currently looking for a position in engine programming and/or content creation t
 # My Projects
 
 <div class="project-list">
-  {% for post in site.posts %}
-    {% if post.categories contains "projects" %}
-      <a href="{{ post.url }}" class="project-card-link">
+  {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+  {% for project in sorted_projects %}
+    {% if project.categories contains "projects" %}
+      <a href="{{ project.url }}" class="project-card-link">
         <div class="project-card">
-          {% if post.preview_image %}
-            <img src="{{ post.preview_image }}" alt="Preview of {{ post.title }}">
+          {% if project.image %}
+            <img src="{{ project.image }}" alt="Preview of {{ project.title }}">
           {% endif %}
 
-          <h2>{{ post.title }}</h2>
-          <p><strong>Date:</strong> {{ post.date | date: "%B %-d, %Y" }}</p>
+          <h2>{{ project.title }}</h2>
+          <p><strong>Date:</strong> {{ project.date | date: "%B %-d, %Y" }}</p>
 
-          {% if post.description %}
-            <p>{{ post.description }}</p>
+          {% if project.description %}
+            <p>{{ project.description }}</p>
           {% endif %}
 
-          {% if post.contributions %}
-            <p><strong>My Contributions:</strong> {{ post.contributions }}</p>
+          {% if project.contributions %}
+            <p><strong>My Contributions:</strong> {{ project.contributions }}</p>
           {% endif %}
 
-          {% if post.tools %}
-            <p><strong>Engine/Tools:</strong> {{ post.tools }}</p>
+          {% if project.tools %}
+            <p><strong>Engine/Tools:</strong> {{ project.tools }}</p>
           {% endif %}
 
-          {% if post.team_size %}
-            <p><strong>Team Size:</strong> {{ post.team_size }}</p>
+          {% if project.team_size %}
+            <p><strong>Team Size:</strong> {{ project.team_size }}</p>
           {% endif %}
 
-          {% if post.platforms %}
-            <p><strong>Platforms:</strong> {{ post.platforms }}</p>
+          {% if project.platforms %}
+            <p><strong>Platforms:</strong> {{ project.platforms }}</p>
           {% endif %}
 
-          {% if post.duration %}
-            <p><strong>Duration:</strong> {{ post.duration }}</p>
+          {% if project.duration %}
+            <p><strong>Duration:</strong> {{ project.duration }}</p>
           {% endif %}
         </div>
       </a>

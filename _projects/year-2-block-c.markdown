@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Fire Ant Engine: Custom C++ Strategy Game Engine"
 date: 2025-04-11
 categories: [projects]

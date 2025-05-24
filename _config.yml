@@ -18,15 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Zhangir Nurmukhambetov Engine & Tools Programmer
-email: zhangir.dev@gmail.com
+title: Portfolio of Zhangir Nurmukhambetov
 
-logo: /assets/img/logo.png
+logo: /assets/images/profile.jpg
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -34,10 +31,18 @@ social:
   github: "https://github.com/jon-gear"
   linkedin:  "https://linkedin.com/in/jon-gear"
   telegram: "https://t.me/JonGearBlog"
+  gmail: "zhangir.dev@gmail.com"
 
+name: Zhangir Nurmukhambetov
+profession: Engine Programmer
 
-twitter_username: jekyllrb
 github_username: Jon-Gear
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 
 # Build settings
 theme: jekyll-theme-minimal
