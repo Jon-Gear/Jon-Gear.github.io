@@ -2,12 +2,9 @@
 layout: default
 ---
 
-# Zhangir Nurmukhambetov
-## Engine & Tools Programmer
+# Hi, I'm Zhangir 
 
-![image1](../assets/images/profile.png)
-
-2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
+I'm a 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
 I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuosly improving my skills.
 
@@ -19,15 +16,64 @@ Currently looking for a position in engine programming and/or content creation t
 
 # Skills
 
-- C++. 8 years of experience in C++
-- Visual Studio. 4 years of experience. Familiar with debugging, profiling, and project configuration tools
-- Visual Studio Code
-- Github. 3 years of experience. Experienced with its pipelines and used them in a team environment, including reviews, automated checks, and managing branches.
-- Perforce. 2 years of experience with Perforce and P4V in a collaborative team environment, including active participation in code reviews.
-- Unreal Engine. 
-- Unity C#. Spend my free time using Unity by making a side passion project. 
-- Python. 
-- Godot. 
+
+<div class="skills-bar">
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/cpp.svg" alt="C++" />
+    <div class="tooltip">
+      C++<br>
+      8 years of experience in C++
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/vs.png" alt="Visual Studio" />
+    <div class="tooltip">
+      Visual Studio<br>
+      4 years of experience. Familiar with debugging, profiling, and project configuration tools
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/vscode.png" alt="Visual Studio Code" />
+    <div class="tooltip">
+      Visual Studio Code<br>
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/github-light.svg" alt="Github" />
+    <div class="tooltip">
+      Github <br> 
+      3 years of experience. Experienced with its pipelines and used them in a team environment, including reviews, automated checks, and managing branches.
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/perforce.png" alt="Perforce" />
+    <div class="tooltip">
+      Perforce <br> 
+      2 years of experience with Perforce and P4V in a collaborative team environment, including active participation in code reviews.
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/unreal.svg" alt="Unreal Engine" />
+    <div class="tooltip">
+      Unreal Engine <br>
+      Familiar working with Blueprints and in C++.
+    </div>
+  </div>
+
+  <div class="skill-icon">
+    <img src=".../assets/images/icons/unity.svg" alt="Unreal Engine" />
+    <div class="tooltip">
+      Unity C# <br>
+      Spend my free time using Unity by making a side passion project.
+    </div>
+  </div>
+</div>
+
 
 
 # My Projects

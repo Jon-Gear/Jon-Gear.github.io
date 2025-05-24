@@ -153,19 +153,61 @@
 }
 
 .rounded-logo {
-
-  border-radius: 20%;  /* Rounded corners — adjust % for roundness */
+  border-radius: 10%;  /* Rounded corners — adjust % for roundness */
   object-fit: cover;   /* Ensures the image fills the box without distortion */
   display: block;
+  margin-bottom: 16px;
 }
 
-.resume-button {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 1rem;
+
+.skills-bar {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.2s;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skill-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.skill-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.skill-icon:hover img {
+  transform: translateY(-4px);
+}
+
+/* Tooltip above icon */
+.tooltip {
+  position: absolute;
+  bottom: 110%; /* Place above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Show tooltip on hover */
+.skill-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -8px); /* Slight float up */
 }
