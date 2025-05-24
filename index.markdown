@@ -2,9 +2,9 @@
 layout: default
 ---
 
-# Hi, I'm Zhangir 
+# 👋 Hi, I'm Zhangir 
 
-I'm a 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
+🎓 I'm a 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
 I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuosly improving my skills.
 
@@ -12,10 +12,9 @@ Proficient in C++. Additional experience with Unreal, Unity, and Godot.
 
 Hobbies: writing stories, calisthenics, designing in Photoshop.
 
-Currently looking for a position in engine programming and/or content creation tool development starting in September 2025.
+💼 Currently looking for a position in engine programming and/or content creation tool development starting in September 2025.
 
-# Skills
-
+# ⚙️ Skills
 
 <div class="skills-bar">
   <div class="skill-icon">
@@ -76,7 +75,7 @@ Currently looking for a position in engine programming and/or content creation t
 
 
 
-# My Projects
+# 🚀 My Projects
 
 <div class="project-list">
   {% assign sorted_projects = site.projects | sort: "date" | reverse %}
