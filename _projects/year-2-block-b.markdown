@@ -1,11 +1,33 @@
 ---
-layout: post
-title: "Custom C++ Engine Terrain Editor"
-image: /assets/images/sample.jpg
+layout: project
+title: "Custom C++ Terrain Editor"
 date: 2025-01-24
-categories: projects
-author: Zhangir Nurmukhambetov
+categories: [projects]
+image: /assets/images/sample.jpg
+description: "Custom C++ Terrain Editor was a solo research project. The project features editable terrain and variety of brushes. The Terrain Editor would later become based for the Fire Ant Engine."
+contributions: "Terrain Mesh Deformation via Height Maps | Vertex Shader with Dynamic Normals & Displacement | Fully Custom Brush Framework | Normals-based Object Placement"
+tools: "C++, OpenGL, GLSL (Vertex & Fragment Shaders), ImGui, GLM"
+team_size: "Solo"
+platforms: "Windows"
+duration: "8 weeks (Nov 2024 - Jan 2025)"
 ---
+
+## My Contributions
+
+### Terrain Rendering
+
+### Brushes
+
+#### Raise and Lower Brush
+
+#### Plateau Brush 
+
+#### Smoothing Brush
+
+#### Foliage Brush
+
+
+
 
 ## Summary Block
 
@@ -15,18 +37,15 @@ Roles - Engine & Tools Programmer
 
 Tasks - Real-time Terrain Rendering, Vertex Shader-based Displacement, Custom Brush System (Raise, Lower, Smooth, Plateau, Foliage), Height Map Editing, Object Placement Tools, Camera & Navigation System
 
-Tech - C++, OpenGL, GLSL (Vertex & Fragment Shaders), ImGui, Custom Engine, GLM, Gear Engine (custom framework)
 
-Dates & Times: 
-8 weeks (Nov 2024 Jan 2025)
 
 
 Features:
-- Terrain Mesh Deformation via Height Maps
-- Vertex Shader with Dynamic Normals & Displacement
-- Fully Custom Brush Framework (Raise, Lower, Plateau, Smooth, Foliage)
+- 
+- 
+- 
 - Realtime Editing with Visual Feedback
-- Normals-based Object Placement (e.g., Trees on Slopes)
+- 
 - Editable Brush Parameters (Size, Intensity, Falloff)
 - Camera Fly Mode with Mouse-Look
 

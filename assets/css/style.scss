@@ -171,7 +171,14 @@
 }
 
 .resume-button:hover {
-  background-color: #1b88fd;
+  background-color: #ffffff;
   color: white; /* Prevent text from turning blue */
   transform: translateY(-2px);
+}
+
+.resume-button,
+.resume-button:visited,
+.resume-button:active {
+  color: white;
+  text-decoration: none;
 }

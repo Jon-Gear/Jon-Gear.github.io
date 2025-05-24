@@ -1,23 +1,18 @@
 ---
-layout: post
+layout: project
 title: "Custom C++ Game Engine"
-image: /assets/images/sample.jpg
 date: 2024-11-01
-categories: projects
-author: Zhangir Nurmukhambetov
+categories: [projects]
+image: /assets/images/sample.jpg
+description: "Custom C++ Engine was a solo project. The project features core engine functionality such as an ECS Architecture, an ImGui editor, a GLTF importer, a Resource manager, full scene serialization using Cereal, a grid-based tile editor, and support on Windows and PS5."
+contributions: "ECS Design (EnTT) | Particle System | ImGui Editor & Gizmo Tooling | GLTF Runtime Loader | Resource Manager | Hierarchy System | Cross-Platform Engine Abstractions | JSON Serialization | Tile-Based Level Editor"
+tools: "C++, OpenGL, GLSL, EnTT, ImGui, Cereal, STB, tinygltf, ImGuizmo"
+team_size: "Solo"
+platforms: "Windows | PS5"
+duration: "8 Weeks (Sep 2024 - Nov 2024)"
 ---
-
 ## Summary Block
 
-Team - Solo Developer
-
-Roles - Engine Programmer / Tools Programmer
-
-Tasks - ECS Design (EnTT), Particle System, ImGui Editor & Gizmo Tooling, GLTF Runtime Loader, Resource Manager, Hierarchy System, Cross-Platform Engine Abstractions, JSON Serialization, Tile-Based Level Editor
-
-Tech - C++, OpenGL, GLSL, EnTT, ImGui, Cereal, STB, tinygltf, ImGuizmo
-
-Dates & Times: 8 Weeks (Sep 2024 - Nov 2024)
 
 Features:
 - ECS Architecture with Hierarchy Support
