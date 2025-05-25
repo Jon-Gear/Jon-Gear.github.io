@@ -174,7 +174,3 @@ Your work provided **core systems** used by all team members:
 * Contributed features fundamental to gameplay: multiplayer, combat, progression.
 * Integrated technical systems with UI and art to support design goals.
 * Increased team productivity by resolving bugs and improving clarity.
-
----
-
-Would you like this turned into a formatted portfolio piece or PDF summary next?
