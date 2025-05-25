@@ -24,23 +24,11 @@ duration: "8 Weeks (Mar 2024 - Apr 2024)"
 
 ### **The Raytracing Algorithm**
 
+![image1](../../assets/images/Y1C/raytracing_algorithm.gif)
+
 I implemented a custom CPU-based Whitted-style recursive raytracer. It supports primary rays, shadow rays, reflection/refraction rays, and stochastic light sampling. Rays recursively interact with the scene to calculate lighting, shadows, and materials.
 
----
-
-### **Shadows**
-
 Shadows were implemented using shadow rays to determine visibility of light sources from hit points. Key challenges included fixing "shadow acne" due to floating-point errors, resolved with an epsilon offset.
-
----
-
-### **Reflections**
-
-Reflection rays are cast recursively. This feature was fully integrated to simulate perfect mirrors and glossy surfaces. Reflections also consider all light types and environment contribution, including the sky dome.
-
----
-
-### **Point Lights, Spot Lights, and Directional Lights**
 
 All common light types were implemented from scratch. Each light computes falloff, direction, and angle of incidence. A light manager aggregates light contributions for any given point. Spotlights include cone falloff logic, and directional lights mimic sunlight.
 
@@ -48,11 +36,19 @@ All common light types were implemented from scratch. Each light computes fallof
 
 ### **Recursive (Whitted) Raytracing for Mirrors and Dielectrics**
 
+![image1](../../assets/images/Y1C/reflections.gif)
+![image1](../../assets/images/Y1C/refractions.gif)
+
+
 I added recursive raytracing to support dielectrics and mirror materials. Implementing dielectrics required Fresnel equations and accounting for internal reflection and refraction, which was one of the hardest parts of the engine. Fresnel blending and total internal reflection were handled accurately using Snell’s law and dot product logic.
+
+Reflection rays are cast recursively. This feature was fully integrated to simulate perfect mirrors and glossy surfaces. Reflections also consider all light types and environment contribution, including the sky dome.
 
 ---
 
 ### **Voxel Sub-Objects**
+
+![image1](../../assets/images/Y1C/bvh.gif)
 
 To support a dynamic scene, I implemented support for many voxel-based sub-objects. These were organized using a Bounding Volume Hierarchy (BVH), dramatically improving performance for ray-scene traversal. Creating a system to handle dozens of independent voxel objects was essential for the game's architecture.
 
@@ -72,11 +68,15 @@ I implemented bilateral filtering as a post-process to reduce noise in stochasti
 
 ### **Texturing**
 
+![image1](../../assets/images/Y1C/texturing.gif)
+
 UV texturing was implemented with support for MIP-mapping to handle under/oversampling artifacts. Normal mapping was also added to simulate fine surface detail without additional geometry.
 
 ---
 
 ### **Panini Projection**
+
+![image1](../../assets/images/Y1C/panini.gif)
 
 Panini projection was used as a camera model to reduce perspective distortion in wide-angle views. Implementing it required studying Shadertoy demos and adapting the math to my own renderer, which was both time-consuming and technically rewarding.
 
@@ -84,11 +84,15 @@ Panini projection was used as a camera model to reduce perspective distortion in
 
 ### **Post-Processing**
 
+![image1](../../assets/images/Y1C/post-processing.gif)
+
 A general post-processing pipeline was established, supporting chromatic aberration, vignetting, depth-of-field, and filtering. These features were key to creating a polished look.
 
 ---
 
 ### **Accumulator**
+
+![image1](../../assets/images/Y1C/accumulator.gif)
 
 A frame accumulator collects multiple samples over time to support anti-aliasing, depth-of-field, and other stochastic effects. This greatly improved image stability and realism.
 
@@ -102,11 +106,16 @@ Multiple lights are sampled probabilistically to reduce rendering cost while pre
 
 ### **Sky Dome Illumination**
 
+![image1](../../assets/images/Y1C/skydome.gif)
+
 HDR environment lighting was added through a sky dome. The dome contributes to both diffuse and specular lighting and can be seen in reflections and refractions. Challenges included implementing UV-based lookup and maintaining lighting consistency.
 
 ---
 
 ### **Beer’s Law**
+
+![image1](../../assets/images/Y1C/beers_law.gif)
+
 
 I implemented Beer’s Law to simulate light attenuation through transparent materials. This was used for both dielectrics and volumetric effects like smoke. It required calculating absorption based on path length inside the medium.
 
