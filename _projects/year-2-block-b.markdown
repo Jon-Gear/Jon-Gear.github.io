@@ -12,10 +12,6 @@ platforms: "Windows"
 duration: "8 weeks (Nov 2024 - Jan 2025)"
 ---
 
-Based on your blog post and the technical documentation in `ILO4.md`, here’s a portfolio-style breakdown of your **Custom Terrain Editor** project. This version mirrors your preferred structure—highlighting **what it does**, followed by your **contributions**, **key features**, and **technical challenges**.
-
----
-
 ## 🏔️ Terrain Editor – My Contributions
 
 ### 🔍 What It Does
