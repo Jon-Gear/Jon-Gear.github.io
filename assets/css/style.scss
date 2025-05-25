@@ -211,3 +211,17 @@
   opacity: 1;
   transform: translate(-50%, -8px); /* Slight float up */
 }
+
+
+.post-media-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+.post-video {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
