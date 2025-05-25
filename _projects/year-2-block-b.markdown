@@ -167,7 +167,7 @@ I implemented a free-fly 3D camera system with full keyboard and mouse support t
 
 ---
 
-### 🎯 Summary of Impact
+### 🎯 Impact
 
 This project taught me the fundamentals of shader-based terrain deformation, interactive editor systems, and real-time tool development. It directly led to major architectural improvements in later projects like the Terrain Editor in Fire Ant.
 
