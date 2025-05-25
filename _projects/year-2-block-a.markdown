@@ -3,7 +3,7 @@ layout: project
 title: "Custom C++ Game Engine"
 date: 2024-11-01
 categories: [projects]
-image: /assets/images/sample.jpg
+image: /assets/images/Y2A/main.gif
 description: "Custom C++ Engine was a solo project. The project features core engine functionality such as an ECS Architecture, an ImGui editor, a GLTF importer, a Resource manager, full scene serialization using Cereal, a grid-based tile editor, and support on Windows and PS5."
 contributions: "ECS Design (EnTT) | Particle System | ImGui Editor & Gizmo Tooling | GLTF Runtime Loader | Resource Manager | Hierarchy System | Cross-Platform Engine Abstractions | JSON Serialization | Tile-Based Level Editor"
 tools: "C++, OpenGL, GLSL, EnTT, ImGui, Cereal, STB, tinygltf, ImGuizmo"
@@ -26,9 +26,7 @@ This project is a fully custom-built C++ game engine designed to support real-ti
 
 ### 🎉 Advanced Particle System Framework
 
-<video width="640" height="480" controls>
-  <source src="../../assets/images/Y2A/W1.mp4" type="video/mp4">
-</video>
+![image1](../../assets/images/Y2A/W1.gif)
 
 In the first week, I developed a robust particle system using EnTT, enabling various particle effects like Confetti, Sparks, and Fire. The system supports both fixed and dynamic timestep updates and includes configurable emitters with features such as color modes (gradient, single, random), shape selection (cube, cylinder, sphere), lifetime, physics properties (mass, gravity), and spawn volume (cone shape). I also implemented a physics system to simulate gravity-influenced motion and a rendering system using a custom `MeshRendererXSR`.
 
@@ -49,6 +47,8 @@ In the first week, I developed a robust particle system using EnTT, enabling var
 
 ### 🪟 Inspector and Editor Tooling with ImGui
 
+![image1](../../assets/images/Y2A/W2.gif)
+
 I integrated a custom GUI using ImGui for simulation control and runtime inspection of scene entities. This included a scene hierarchy viewer, particle emitter editor, and transform gizmos via ImGuizmo. The system allows spawning and editing emitters, viewing debug visualizations, and manipulating objects within the editor viewport.
 
 **Key Features:**
@@ -67,6 +67,8 @@ I integrated a custom GUI using ImGui for simulation control and runtime inspect
 ---
 
 ### 🥣 Serialization System and Platform Abstraction
+
+![image1](../../assets/images/Y2A/W3.gif)
 
 I implemented full serialization and deserialization of entities and components using the Cereal library. This included a custom system for saving/loading entire scene hierarchies as JSON. I also built cross-platform abstractions for input, file I/O, audio, and rendering using a mix of PIMPL, macros, and conditional compilation.
 
@@ -87,6 +89,8 @@ I implemented full serialization and deserialization of entities and components 
 
 ### 🌳 Runtime Resource Management and GLTF Importer
 
+![image1](../../assets/images/Y2A/W4.gif)
+
 I created a runtime resource manager with support for loading and caching meshes and textures. The manager supports reference counting and lazy loading. I also developed a GLTF importer that loads complex models with proper mesh-texture mapping and hierarchy instantiation in the engine.
 
 **Key Features:**
@@ -105,6 +109,8 @@ I created a runtime resource manager with support for loading and caching meshes
 ---
 
 ### 🧊 Tile-Based Level Editor
+
+![image1](../../assets/images/Y2A/W5.gif)
 
 I implemented a functional tile-based level editor. This editor allows users to define grid sizes, import tile models via GLTF, assign them to grid tiles, and save/load entire levels. Tiles can be selected via mouse picking in the viewport and visually edited in the Inspector.
 
