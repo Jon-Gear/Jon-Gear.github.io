@@ -16,15 +16,12 @@ duration: "8 Weeks (Feb 2025 - Apr 2025)"
 
 ### Terrain Editor
 
-[Image]
-
 #### Key Features & Challenges
-
-[Image]
 
 ### Terrain Rendering
 
-[Image]
+![image1](../../assets/images/Y2C/tesselation.gif)
+
 
 #### Key Features & Challenges
 
@@ -65,7 +62,7 @@ duration: "8 Weeks (Feb 2025 - Apr 2025)"
 
 ### Prefab System
 
-[Image]
+![image1](../../assets/images/Y2C/prefabs.gif)
 
 #### Key Features & Challenges
 
