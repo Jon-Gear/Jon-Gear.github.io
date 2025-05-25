@@ -161,7 +161,7 @@ I developed a robust scene serialization system using **Cereal + EnTT Meta**, su
 
 ---
 
-## ⚙️ Key Engineering Concepts
+## 🧠 Key Engineering Concepts
 
 * **GPU Compute Shaders** for real-time texture modification.
 * **Tessellation & Displacement Mapping** for terrain rendering.
@@ -171,7 +171,7 @@ I developed a robust scene serialization system using **Cereal + EnTT Meta**, su
 
 ---
 
-## 🔍 Impact
+## 🎯 Impact
 
 My contributions enabled:
 

@@ -166,7 +166,7 @@ Integrated character animations like idle, walk, shoot, and death.
 
 ---
 
-## 🧠 Overall Impact
+## 🎯  Overall Impact
 
 Your work provided **core systems** used by all team members:
 
