@@ -7,15 +7,12 @@ layout: default
 </p>
 
 <div class="project-pill">
-  {% if page.video %}
-    <div class="post-media-wrapper">
-      <video class="post-video" autoplay muted loop playsinline>
-        <source src="{{ page.video }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  {% if page.image %}
+    <div class="post-image-wrapper">
+      <img src="{{ page.image }}" alt="Preview image for {{ page.title }}" class="post-image" />
     </div>
   {% endif %}
-
+  
   <div class="project-info">
     <h1>{{ page.title }}</h1>
     <p class="project-date">{{ page.date | date: "%B %-d, %Y" }}</p>

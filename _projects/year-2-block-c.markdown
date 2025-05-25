@@ -3,8 +3,7 @@ layout: project
 title: "Fire Ant Engine: Custom C++ Strategy Game Engine"
 date: 2025-04-11
 categories: [projects]
-video: /assets/images/Y2C/main.mp4
-image: /assets/images/sample.jpg
+image: /assets/images/Y2C/main.gif
 description: "Fire Ant Engine is a continuation of my custom Terrain Editor. The team was joined by seven talented programmers. The project features a prefab system, a terrain editor, flow-fields for AI agent navigation, an in-engine UI editor, optimizations which allowed a support for a large terrain map and many units, and support on Windows and Nintendo Switch."
 contributions: "Terrain Editor | Terrain Rendering | Height Editing | Texture Editing | Prop Placement | Scene Serialization | Prefabs"
 tools: "C++, OpenGL, GLSL (Compute & Tesselation Shaders), EnTT, Cereal, ImGui"
