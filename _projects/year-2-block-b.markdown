@@ -3,7 +3,7 @@ layout: project
 title: "Custom C++ Terrain Editor"
 date: 2025-01-24
 categories: [projects]
-image: /assets/images/sample.jpg
+image: /assets/images/Y2B/main.gif
 description: "Custom C++ Terrain Editor was a solo research project. The project features editable terrain and variety of brushes. The Terrain Editor would later become based for the Fire Ant Engine."
 contributions: "Terrain Mesh Deformation via Height Maps | Vertex Shader with Dynamic Normals & Displacement | Fully Custom Brush Framework | Normals-based Object Placement"
 tools: "C++, OpenGL, GLSL (Vertex & Fragment Shaders), ImGui, GLM"
@@ -12,108 +12,151 @@ platforms: "Windows"
 duration: "8 weeks (Nov 2024 - Jan 2025)"
 ---
 
-## My Contributions
+Based on your blog post and the technical documentation in `ILO4.md`, here’s a portfolio-style breakdown of your **Custom Terrain Editor** project. This version mirrors your preferred structure—highlighting **what it does**, followed by your **contributions**, **key features**, and **technical challenges**.
 
-### Terrain Rendering
+---
 
-### Brushes
+## 🏔️ Terrain Editor – My Contributions
 
-#### Raise and Lower Brush
+### 🔍 What It Does
 
-#### Plateau Brush 
+The **Custom C++ Terrain Editor** is a solo-developed terrain sculpting tool and rendering system built in C++ using OpenGL. It enables real-time terrain editing via an intuitive brush interface, allowing users to raise/lower terrain, flatten areas, smooth contours, and scatter foliage—all with visual feedback. It also includes dynamic heightmap-based terrain rendering and an interactive camera system for navigation.
 
-#### Smoothing Brush
+This project served as the **predecessor to the Terrain Editor in Fire Ant**, laying the groundwork for compute-driven tools and brush architecture used in later engine projects.
 
-#### Foliage Brush
+---
 
+## 🔨 My Contributions
 
+---
 
+### 🕹️ Camera System
 
-## Summary Block
+I implemented a free-fly 3D camera system with full keyboard and mouse support to allow intuitive navigation across the terrain.
 
-Team - Solo Developer
+**Key Features:**
 
-Roles - Engine & Tools Programmer
+* WASD + QE movement controls with Shift-based speed boost.
+* Mouse-based pitch and yaw using quaternion math.
+* Camera frustum integration for viewport interaction.
 
-Tasks - Real-time Terrain Rendering, Vertex Shader-based Displacement, Custom Brush System (Raise, Lower, Smooth, Plateau, Foliage), Height Map Editing, Object Placement Tools, Camera & Navigation System
+**Challenges:**
 
+* Handling mouse sensitivity and orientation smoothly across all axes.
+* Ensuring intuitive controls within an ImGui-driven editor.
 
+---
 
+### 🌄 Terrain Rendering
 
-Features:
-- 
-- 
-- 
-- Realtime Editing with Visual Feedback
-- 
-- Editable Brush Parameters (Size, Intensity, Falloff)
-- Camera Fly Mode with Mouse-Look
+I built a full rendering pipeline for **heightmap-displaced terrain** using a custom vertex shader that dynamically adjusts vertex positions based on height texture values.
 
-## Detail
+**Key Features:**
 
-Terrain Editor Engine is a solo-developed custom terrain editing tool and rendering engine built in C++ using OpenGL. It served as a technical prototype and foundational architecture for the later Fire Ant Engine, with a focus on GPU-based terrain deformation and extensible editor tooling.
+* Real-time terrain displacement using heightmap textures.
+* Per-pixel normal calculation in vertex shader using height differentials.
+* Visual terrain sculpting directly reflected in mesh deformation.
 
-### 🛠️ Real-Time Terrain Rendering
-At the heart of the engine is a dynamic terrain mesh system rendered using a custom vertex shader. The terrain’s shape is deformed in real time via a height map texture, which is uploaded and modified directly from the editor. Normals are computed on-the-fly in the shader by sampling the height map in adjacent texels, ensuring consistent lighting and shading without precomputed data.
+**Challenges:**
 
-To enable this, the rendering pipeline was extended with:
+* Implementing dynamic normals in shader for accurate lighting.
+* Encoding and decoding 32-bit float height values in RGBA textures.
+* Integrating seamlessly into the existing BEE rendering system.
 
-A Material system supporting height map textures.
+---
 
-Shader modifications for sampling and decoding 32-bit RGBA height data.
+### 🖌️ Brush System
 
-Per-pixel normal reconstruction for lighting fidelity.
+I developed a fully functional **brush-based editing interface** that modifies terrain heightmap data in real time. Each brush operates on a targeted region and modifies texture data on the CPU before uploading it back to the GPU.
 
-This allowed precise deformation and editing with full visual feedback inside the engine.
+---
 
-### ✍️ Brush System & Terrain Editing
-I designed and implemented a modular brush system to support multiple terrain manipulation modes. Each brush operates on the GPU texture directly, modifying terrain height based on the user-defined area and strength. The brush system includes:
+#### 🧱 Raise and Lower Brush
 
-Raise/Lower Brush – Gaussian-weighted deformation in a circle or custom alpha brush shape.
+**What It Does:**
+Raises or lowers terrain in a circular region using a Gaussian distribution, with optional "average terrain" filtering to sculpt only selected elevations.
 
-Plateau Brush – Flattens terrain to a sampled or fixed height with optional falloff.
+**Key Features:**
 
-Smooth Brush – Averages out nearby terrain points for natural transitions.
+* Brush size controlled via GUI and keyboard shortcuts (`[` and `]`).
+* Gaussian falloff for natural hills and valleys.
+* Optional averaging mode for smoother sculpting.
 
-Foliage Brush – Spawns 3D objects (e.g., trees) along terrain, optionally aligning with terrain normals.
+**Challenges:**
 
-Brush size, intensity, and mode can be controlled in real-time via the GUI or keyboard shortcuts ([ and ]). A projected brush circle in the viewport provides precise user feedback.
+* Precision sampling and modification of texture regions.
+* Efficient GPU upload via `glTexSubImage2D`.
+* Integrating user-defined intensity, radius, and direction.
 
-This brush architecture later became the foundation of the more advanced terrain editor system in Fire Ant.
+---
 
-### 🔍 Height Map Modification & Texture Upload
-Instead of rebuilding geometry, the editor modifies the height map texture directly, extracting and re-uploading only the edited region using OpenGL’s glTexSubImage2D. This minimized bandwidth and improved responsiveness during painting.
+#### 🏔️ Plateau Brush
 
-To optimize for interaction:
+**What It Does:**
+Flattens terrain within the brush area to a target height—either manually set or sampled from the terrain via mouse click.
 
-Brush regions are computed from ray-plane intersections and transformed into UV space.
+**Key Features:**
 
-Height decoding/encoding from 32-bit RGBA ensures precise elevation control.
+* Terrain sampling for real-time height targeting.
+* Sharp yet smooth edges using distance-based Gaussian blending.
+* Adjustable brush shape and diameter.
 
-Terrain normals for foliage placement are computed using the same sampling logic as in shaders.
+**Challenges:**
 
-### 🧭 Camera & Navigation System
-For usability, I implemented a free-fly camera system inspired by 3D modeling tools. The system supports:
+* Real-time sampling and synchronization between UI and edit operations.
+* Balancing falloff and accuracy to prevent unnatural flat zones.
 
-WASD movement with vertical controls (Q/E) and speed boost via Shift.
+---
 
-Mouse-look rotation with yaw/pitch and adjustable sensitivity.
+#### 🧩 Smoothing Brush
 
-Seamless integration into the editor for inspecting terrain edits.
+**What It Does:**
+Averages surrounding terrain to eliminate sharp edges and create smooth transitions between sculpted features.
 
-This navigation system is not commonly included in terrain editors and helped establish a usable solo workflow.
+**Key Features:**
 
-## Reflections
-This project was a major stepping stone in my technical development. It served as a self-contained prototype that taught me the principles of:
+* Computes average height of brush region and nudges local points toward it.
+* Effective for softening harsh elevation changes.
 
-GPU-based editing pipelines using texture feedback.
+**Challenges:**
 
-Shader-driven mesh displacement.
+* Preventing over-smoothing and maintaining natural detail.
+* Efficient height sampling and buffer handling.
 
-Realtime editor feedback loops and user interaction design.
+---
 
-Object-space math for brushes and normals.
+#### 🌳 Foliage Brush
 
-Efficient texture I/O with partial GPU uploads.
+**What It Does:**
+Spawns props (like trees) along terrain, with random scattering and optional alignment to terrain normals.
 
-It also directly influenced the architecture and systems later adopted in Fire Ant Engine, particularly in the terrain editor, brush system, and foliage placement tools.
+**Key Features:**
+
+* Real-time prop spawning based on brush area.
+* Placement along surface normals using dynamic heightmap-based normal calculation.
+* Supports arbitrary models (trees, rocks, etc.).
+
+**Challenges:**
+
+* Calculating normals in CPU-space based on sampled height differences.
+* Aligning rotation to match surface orientation (quaternion math).
+* Managing object instancing and entity creation.
+
+---
+
+### 🧠 Key Engineering Techniques
+
+* **Raycasting** from screen to world space for accurate brush placement.
+* **UV coordinate derivation** from 3D brush position to texture space.
+* **Brush zone sampling & editing** using bounding box logic on heightmaps.
+* **Efficient GPU I/O** via partial `glTexSubImage2D` updates.
+* **Gaussian weight distribution** for natural deformation.
+* **Normal vector reconstruction** from sampled height gradients.
+
+---
+
+### 🎯 Summary of Impact
+
+This project taught me the fundamentals of shader-based terrain deformation, interactive editor systems, and real-time tool development. It directly led to major architectural improvements in later projects like the Terrain Editor in Fire Ant.
+
+My brush system, heightmap-based editing, and real-time feedback loop laid a reusable foundation for more scalable GPU-powered editing tools.
