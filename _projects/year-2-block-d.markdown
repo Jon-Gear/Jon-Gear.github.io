@@ -12,16 +12,4 @@ platforms: "Windows | PS5"
 duration: "8 Weeks (May 2025 - Jun 2025) (Ongoing))"
 ---
 
-Zentera is a game developed on a custom C++ voxel engine called Kudzu. It is an ongoing project.
-
----
-
-## 🔨 My Contributions
-
----
-
-### 🏆 Role as Lead Programmer
-
-
-
-### 🎉 Particle System
+Zentera is a game developed on a custom C++ voxel engine called Kudzu. It is an ongoing project where I am currently a lead programmer.
