@@ -24,6 +24,8 @@ This tool was critical to the Fire Ant engine, forming its foundation for terrai
 
 ## 🔨 My Contributions
 
+---
+
 ### 🛠️ Terrain Editor Architecture
 
 I restructured and extended the original Block B prototype into a robust, extensible tool using an object-oriented brush system built on a shared interface. Each brush (Height, Texture, Prop, Plateau) inherits from a common `TerrainBrush` base class, allowing seamless expansion.

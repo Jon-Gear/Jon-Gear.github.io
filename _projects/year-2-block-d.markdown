@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Zentera: Custom C++ Voxel Engine (Ongoing)"
-date: 2025-04-11
+date: 2025-06-27
 categories: [projects]
 image: /assets/images/Y2D/main.jpg
 description: "Zentera is a game developed on a custom C++ voxel engine called Kudzu. The team was joined by four artists, three designers, and nine programmers, where I took on the role of a programming lead. The project is actively ongoing until June 2025"
@@ -12,3 +12,16 @@ platforms: "Windows | PS5"
 duration: "8 Weeks (May 2025 - Jun 2025) (Ongoing))"
 ---
 
+Zentera is a game developed on a custom C++ voxel engine called Kudzu. It is an ongoing project.
+
+---
+
+## 🔨 My Contributions
+
+---
+
+### 🏆 Role as Lead Programmer
+
+
+
+### 🎉 Particle System
