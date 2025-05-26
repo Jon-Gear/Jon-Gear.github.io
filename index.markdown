@@ -6,7 +6,7 @@ layout: default
 
 🎓 I'm a 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
-I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuosly improving my skills.
+I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuously improving my skills.
 
 Proficient in C++. Additional experience with Unreal, Unity, and Godot.
 
@@ -97,6 +97,8 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
         {% if project.description %}
           <p>{{ project.description }}</p>
         {% endif %}
+        
+        <p><a href="{{ project.url }}" class="read-more-link">Read more →</a></p>
 
         {% if project.contributions %}
           <p><strong>My Contributions:</strong> {{ project.contributions }}</p>
@@ -117,7 +119,9 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
         {% if project.duration %}
           <p><strong>Duration:</strong> {{ project.duration }}</p>
         {% endif %}
+
       </div>
     {% endif %}
   {% endfor %}
 </div>
+
