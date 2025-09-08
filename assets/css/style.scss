@@ -7,9 +7,15 @@
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;               /* allow items to wrap */
   gap: 1.5rem;
   justify-content: center;
   margin-top: 1.5rem;
+}
+
+.social-links li {
+  flex: 1 1 calc(33.333% - 1.5rem); /* 3 items per row */
+  text-align: center;               /* center the icons + text */
 }
 
 .social-links li a {
@@ -19,6 +25,7 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;          /* center icon + text */
   gap: 0.5rem;
   transition: color 0.2s;
 }
@@ -30,6 +37,7 @@
 .social-links i {
   font-size: 1.2rem;
 }
+
 
 
 .project-list {

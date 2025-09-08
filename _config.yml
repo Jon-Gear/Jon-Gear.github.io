@@ -26,9 +26,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 social:
-  resume: "/resume"
+  resume: "/assets/Zhangir_Nurmukhambetov_CV.pdf"
   github: "https://github.com/jon-gear"
   linkedin:  "https://linkedin.com/in/jon-gear"
+  itchio: "https://jon-gear.itch.io/"
+  youtube: "https://www.youtube.com/@Jon-Gear"
   telegram: "https://t.me/JonGearBlog"
   gmail: "zhangir.dev@gmail.com"
 

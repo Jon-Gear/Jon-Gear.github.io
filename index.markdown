@@ -12,7 +12,7 @@ Proficient in C++. Additional experience with Unreal, Unity, and Godot.
 
 Hobbies: writing stories, calisthenics, designing in Photoshop.
 
-💼 Currently looking for a position in engine programming and/or content creation tool development starting in September 2025.
+💼 Currently looking for a position in engine programming and/or content creation tool development starting in February 2026.
 
 # ⚙️ Skills
 
