@@ -20,6 +20,8 @@ The **Terrain Editor** is a real-time terrain editing toolkit built directly int
 
 This tool was critical to the Fire Ant engine, forming its foundation for terrain-based gameplay and visual fidelity.
 
+[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/fireant)
+
 ---
 
 ## 🔨 My Contributions

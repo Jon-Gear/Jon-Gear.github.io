@@ -22,6 +22,8 @@ This project served as the **predecessor to the Terrain Editor in Fire Ant**, la
 
 [I have written a blog post about the project here.](https://jongear.hashnode.dev/custom-c-engine-terrain-editor)
 
+[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/fireant)
+
 ---
 
 ## 🔨 My Contributions
