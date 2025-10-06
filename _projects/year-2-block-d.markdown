@@ -24,6 +24,8 @@ duration: "8 Weeks (May 2025 - June 2025)"
 
 Zentera is a third-person puzzle-platformer where players use an extendable tongue to pull crates, activate switches, and solve physics-based challenges. The game was developed in a custom engine using agile practices across multiple sprints. The project focused on pushing the boundaries of multidisciplinary collaboration—merging level design, programming, art, and sound into a cohesive player experience. With iterative feedback loops, rigorous QA processes, and multiple early access releases, Zentera evolved rapidly into a polished gameplay prototype showcased on itch.io.
 
+[Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/zentera)
+
 ---
 
 ## 🔨 My Contributions
@@ -164,3 +166,5 @@ My contributions provided **core systems and processes** integral to the team’
 * Significantly improved QA processes, ensuring bugs were identified, reported, and resolved efficiently.
 * Led the release effort, from minimum specs identification to polished itch.io presentation, enabling timely early access updates.
 * Acted as a bridge between disciplines—aligning programming, art, design, and marketing efforts for cohesive project delivery.
+
+
