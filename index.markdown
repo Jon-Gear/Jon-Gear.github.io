@@ -4,7 +4,7 @@ layout: default
 
 # 👋 Hi, I'm Zhangir 
 
-🎓 I'm a 2nd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
+🎓 I'm a 3rd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
 I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuously improving my skills.
 
