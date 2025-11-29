@@ -43,6 +43,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  work:
+    output: true
+    permalink: /work/:name/
 
 
 # Build settings
