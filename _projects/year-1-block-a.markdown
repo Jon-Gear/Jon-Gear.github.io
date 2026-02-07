@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Pitfall Recreation"
+role: "Programmer"
 date: 2023-11-03
 categories: [projects]
 image: /assets/images/Y1A/main.gif

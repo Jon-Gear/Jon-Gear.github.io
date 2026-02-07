@@ -1,17 +1,17 @@
 ---
 layout: work
-title: "Tools Developer @ SportsImproVR"
-company: "SportsImproVR"
-work_type: "Internship"
-date: 2025-11-10
+title: "Internship at SportsImproVR"
+role: "Tools Programmer"
+start_date: 2025-11-10
+end_date: 2026-04-10
+version: long
+short_url: /work/internship-1-short
+long_url: /work/internship-1-long
 categories: [work]
 image: /assets/images/internship-1/logo.png
-description: "SportsImproVR is a virtual reality training company specialized in baseball, softball, and tennis."
-contributions: "Video-to-FBX Converter"
+contributions: "Video-to-FBX Converter | Full-Body Tracking with XSens DOT Trackers"
 tools: "Unity, C#, Python, C++"
-team_size: "Solo"
 platforms: "Virtual Reality (Meta Quest) | Windows"
-duration: "6 Months (Nov 2025 - Apr 2026)"
 ---
 
 ## ⚾ About SportsImproVR

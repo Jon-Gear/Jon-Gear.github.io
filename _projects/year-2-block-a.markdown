@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Custom C++ Game Engine"
+role: "Engine Programmer"
 date: 2024-11-01
 categories: [projects]
 image: /assets/images/Y2A/main.gif

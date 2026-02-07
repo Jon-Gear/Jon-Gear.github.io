@@ -1,46 +1,47 @@
 ---
-layout: default
+layout: page_full
 ---
 
-<p>
-  <a href="javascript:history.back()" class="back-button">← Back</a>
-</p>
+<nav class="topbar">
+  <a href="{{ "/" | relative_url }}" class="back-button">← Home</a>
+>
 
-<div class="project-pill">
-  {% if page.image %}
-    <div class="post-image-wrapper">
-      <img src="{{ page.image }}" alt="Preview image for {{ page.title }}" class="post-image" />
-    </div>
-  {% endif %}
-  
-  <div class="project-info">
-    <h1>{{ page.title }}</h1>
-    <p class="project-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+  <div class="page-modes">
+    {% assign short_url = page.short_url | default: page.url | replace: "/long/", "/short/" %}
+    {% assign long_url  = page.long_url  | default: page.url | replace: "/short/", "/long/" %}
 
-    {% if page.description %}
-      <p class="project-description">{{ page.description }}</p>
-    {% endif %}
-
-    {% if page.contributions %}
-      <p><strong>My Contributions:</strong> {{ page.contributions }}</p>
-    {% endif %}
-
-    {% if page.tools %}
-      <p><strong>Engine/Tools:</strong> {{ page.tools }}</p>
-    {% endif %}
-
-    {% if page.team_size %}
-      <p><strong>Team Size:</strong> {{ page.team_size }}</p>
-    {% endif %}
-
-    {% if page.platforms %}
-      <p><strong>Platforms:</strong> {{ page.platforms }}</p>
-    {% endif %}
-
-    {% if page.duration %}
-      <p><strong>Duration:</strong> {{ page.duration }}</p>
-    {% endif %}
+    <a class="mode-link {% if page.version == "short" %}active{% endif %}" href="{{ short_url | relative_url }}">Short</a>
+    <a class="mode-link {% if page.version == "long" %}active{% endif %}" href="{{ long_url | relative_url }}">Long</a>
   </div>
+</nav>
+
+{% if page.version == "short" %}
+  <div class="version-banner short">
+    <strong>You are reading the short version.</strong>
+    <span>Best if you are in a hurry or want a quick overview.</span>
+  </div>
+{% elsif page.version == "long" %}
+  <div class="version-banner long">
+    <strong>You are reading the long version.</strong>
+    <span>Best if you want full context and technical detail.</span>
+  </div>
+{% else %}
+  <div class="version-banner neutral">
+    <strong>Version not specified.</strong>
+    <span>Add <code>version: short</code> or <code>version: long</code> in the page front matter.</span>
+  </div>
+{% endif %}
+
+
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
 </div>
 
-{{ content }}
+<aside class="toc-wrap">
+  <h1>🗺️ Quick Navigation!</h1>
+  <nav id="toc"></nav>
+</aside>
+
+<article class="page-body" id="content">
+  {{ content }}
+</article>

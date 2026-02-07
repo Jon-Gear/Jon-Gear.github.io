@@ -104,10 +104,11 @@
 
 
 .project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
+
 
 .project-card {
   border: 1px solid #ccc;
@@ -292,3 +293,183 @@
 .read-more-link:hover {
   text-decoration: underline;
 }
+
+///================
+
+.wrapper-full {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.content-full {
+  width: 100%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.page-modes {
+  display: flex;
+  gap: 10px;
+}
+
+.mode-link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
+.mode-link.active {
+  font-weight: 700;
+}
+
+.page-header .lead {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 14px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.meta-item {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.toc-wrap {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.toc-wrap ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+}
+
+.toc-wrap li {
+  margin: 6px 0;
+}
+
+.toc-h3 {
+  padding-left: 14px;
+  opacity: 0.9;
+}
+
+.page-body {
+  margin-top: 22px;
+}
+
+
+///================
+
+
+.version-banner {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  margin: 10px 0 14px 0;
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.version-banner code {
+  font-size: 0.9em;
+}
+
+.version-banner.short {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.version-banner.long {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.version-banner.neutral {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+//===============================
+
+/* Default layout, sidebar pinned left */
+body.with-sidebar .wrapper {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Sidebar stays on the left within the centred wrapper */
+body.with-sidebar header {
+  float: left;
+  width: 320px;
+  margin: 0;
+}
+
+/* Content uses the remaining width */
+body.with-sidebar section {
+  float: none;
+  width: auto;
+  margin-left: 360px;
+}
+
+
+/* Full page layout, centred */
+body.fullpage .wrapper-full {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+body.fullpage .content-full {
+  width: 100%;
+}
+
+/* Mobile fallback */
+@media (max-width: 980px) {
+  body.with-sidebar header {
+    float: none;
+    width: auto;
+  }
+
+  body.with-sidebar section {
+    margin-left: 0;
+  }
+}
+
+body.fullpage {
+  margin: 0;
+}
+
+body.fullpage header,
+body.fullpage section {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+

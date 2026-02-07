@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Custom C++ Terrain Editor"
+role: "Engine Programmer"
 date: 2025-01-24
 categories: [projects]
 image: /assets/images/Y2B/main.gif

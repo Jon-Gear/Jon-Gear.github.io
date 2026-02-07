@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "3D Endless Runner: Cross-Platform Development on Raspberry Pi"
+role: "Programmer"
 date: 2024-01-26
 categories: [projects]
 image: /assets/images/Y1B/main.gif

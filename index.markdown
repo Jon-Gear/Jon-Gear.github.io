@@ -2,11 +2,12 @@
 layout: default
 ---
 
-# 👋 Hi, I'm Zhangir 
+# 👋 Hello! I'm Zhangir
+## Engine & Tools Programmer
 
 🎓 I'm a 3rd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
-💼 I'm a Tools Developer intern at SportsImproVR.
+💼 I'm a Tools Programmer intern at SportsImproVR.
 
 I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuously improving my skills.
 
@@ -75,12 +76,14 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
 
 
 
-# 💼 My Professional Experience
+# 💼 Professional Experience
+
+A few roles where I helped teams ship by building tools, improving workflows, and solving practical technical problems.
 
 <div class="project-list">
-  {% assign sorted_work = site.work | sort: "date" | reverse %}
+  {% assign sorted_work = site.work | sort: "start_date" | reverse %}
   {% for job in sorted_work %}
-    {% if job.categories contains "work" %}
+    {% if job.categories contains "work" and job.version == "short"%}
       <div class="project-card">
         {% if job.image %}
           <a href="{{ job.url }}" class="project-image-link">
@@ -88,25 +91,37 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
           </a>
         {% endif %}
 
+        {% if job.role %}
+          <h2>{{ job.role }}</h2>
+        {% endif %}
+
         <h2>
           <a href="{{ job.url }}" class="project-title-link">{{ job.title }}</a>
         </h2>
 
-        <p><strong>Date:</strong> {{ job.date | date: "%B %-d, %Y" }}</p>
+        {% assign now_ts = "now" | date: "%s" %}
+        {% assign start_ts = job.start_date | date: "%s" %}
+        {% assign end_ts = job.end_date | default: job.start_date | date: "%s" %}
 
-        {% if job.company %}
-          <p><strong>Company:</strong> {{ job.company }}</p>
+        {% if start_ts > now_ts %}
+          <p><strong>Date:</strong>
+            Starts {{ job.start_date | date: "%B %-d, %Y" }}
+            {% if job.end_date %} - {{ job.end_date | date: "%B %-d, %Y" }}{% endif %}
+          </p>
+        {% else %}
+          <p><strong>Date:</strong>
+            {{ job.start_date | date: "%B %-d, %Y" }}
+            -
+            {% if job.end_date and end_ts > now_ts %}
+              Present
+            {% elsif job.end_date %}
+              {{ job.end_date | date: "%B %-d, %Y" }}
+            {% else %}
+              Present
+            {% endif %}
+          </p>
         {% endif %}
 
-        {% if job.work_type %}
-          <p><strong>Work Type:</strong> {{ job.work_type }}</p>
-        {% endif %}
-
-
-        {% if job.description %}
-          <p>{{ job.description }}</p>
-        {% endif %}
-        
         <p><a href="{{ job.url }}" class="read-more-link">Read more →</a></p>
 
         {% if job.contributions %}
@@ -115,10 +130,6 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
 
         {% if job.tools %}
           <p><strong>Tools:</strong> {{ job.tools }}</p>
-        {% endif %}
-
-        {% if job.team_size %}
-          <p><strong>Team Size:</strong> {{ job.team_size }}</p>
         {% endif %}
 
         {% if job.duration %}
@@ -131,12 +142,73 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
 
 <br>
 
-# 🚀 My Projects
+# 🌟 Featured Projects
+
+A small selection of projects I am most proud of, chosen for clear impact, strong engineering, and polished presentation.
 
 <div class="project-list">
   {% assign sorted_projects = site.projects | sort: "date" | reverse %}
   {% for project in sorted_projects %}
-    {% if project.categories contains "projects" %}
+    {% if project.categories contains "featured_projects" and (project.version == "short" or project.version == "none")%}
+      <div class="project-card">
+        {% if project.image %}
+          <a href="{{ project.url }}" class="project-image-link">
+            <img src="{{ project.image }}" alt="Preview of {{ project.title }}">
+          </a>
+        {% endif %}
+
+        {% if project.role %}
+          <h2>{{ project.role }}</h2>
+        {% endif %}
+
+        <h2>
+          <a href="{{ project.url }}" class="project-title-link">{{ project.title }}</a>
+        </h2>
+
+        <p><strong>Date:</strong> {{ project.date | date: "%B %-d, %Y" }}</p>
+
+        {% if project.description %}
+          <p>{{ project.description }}</p>
+        {% endif %}
+        
+        <p><a href="{{ project.url }}" class="read-more-link">Read more →</a></p>
+
+        {% if project.contributions %}
+          <p><strong>My Contributions:</strong> {{ project.contributions }}</p>
+        {% endif %}
+
+        {% if project.tools %}
+          <p><strong>Engine/Tools:</strong> {{ project.tools }}</p>
+        {% endif %}
+
+        {% if project.team_size %}
+          <p><strong>Team Size:</strong> {{ project.team_size }}</p>
+        {% endif %}
+
+        {% if project.platforms %}
+          <p><strong>Platforms:</strong> {{ project.platforms }}</p>
+        {% endif %}
+
+        {% if project.duration %}
+          <p><strong>Duration:</strong> {{ project.duration }}</p>
+        {% endif %}
+
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<br>
+
+
+# 🧩 Other Projects
+
+Earlier work and experiments, kept here for extra context and range.
+
+<div class="project-list">
+  {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+  {% for project in sorted_projects %}
+    {% if project.categories contains "projects"%}
       <div class="project-card">
         {% if project.image %}
           <a href="{{ project.url }}" class="project-image-link">
