@@ -5,6 +5,7 @@ company: "Apollo Journey"
 role: "Tools Developer"
 start_date: 2026-04-10
 end_date: 2026-10-10
+version: short
 categories: [1work]
 image: /assets/images/internship-2/logo.png
 description: "Coming soon..."

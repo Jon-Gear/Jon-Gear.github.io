@@ -105,9 +105,11 @@
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  align-items: start;
 }
+
 
 
 .project-card {
@@ -473,3 +475,117 @@ body.fullpage section {
   margin: 0;
 }
 
+////
+
+
+/* Mobile: stack sidebar and content, remove the left offset */
+@media (max-width: 900px) {
+  body.with-sidebar header {
+    float: none;
+    width: 100%;
+  }
+
+  body.with-sidebar section {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  body.with-sidebar .wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.project-card h2,
+.project-card p,
+.project-card a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  body.with-sidebar .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  body.with-sidebar header,
+  body.with-sidebar section {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .social-links {
+    margin-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .social-links ul {
+    gap: 12px 18px;
+  }
+
+  .social-links li a {
+    justify-content: flex-start;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.with-sidebar .wrapper,
+body.fullpage .wrapper-full,
+body.with-sidebar header,
+body.with-sidebar section {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.social-links ul {
+  width: 100%;
+}
+
+.social-links li a {
+  max-width: 100%;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+}

@@ -5,32 +5,29 @@ layout: page_full
 <nav class="topbar">
   <a href="{{ "/" | relative_url }}" class="back-button">← Home</a>
 
+  {% if page.version == "short" or page.version == "long" %}
+    <div class="page-modes">
+      {% assign short_url = page.short_url | default: page.url | replace: "-long", "-short" | replace: "/long/", "/short/" %}
+      {% assign long_url  = page.long_url  | default: page.url | replace: "-short", "-long" | replace: "/short/", "/long/" %}
 
-  <div class="page-modes">
-    {% assign short_url = page.short_url | default: page.url | replace: "/long/", "/short/" %}
-    {% assign long_url  = page.long_url  | default: page.url | replace: "/short/", "/long/" %}
-
-    <a class="mode-link {% if page.version == "short" %}active{% endif %}" href="{{ short_url | relative_url }}">Read Short Version</a>
-    <a class="mode-link {% if page.version == "long" %}active{% endif %}" href="{{ long_url | relative_url }}">Read Long Version</a>
-  </div>
+      <a class="mode-link {% if page.version == "short" %}active{% endif %}" href="{{ short_url | relative_url }}">Read short version</a>
+      <a class="mode-link {% if page.version == "long" %}active{% endif %}" href="{{ long_url | relative_url }}">Read long version</a>
+    </div>
+  {% endif %}
 </nav>
 
 {% if page.version == "short" %}
   <div class="version-banner short">
     <strong>You are reading the short version.</strong>
-    <span>Best if you are in a hurry or want a quick overview.</span>
+    <span>Best if you want a quick overview.</span>
   </div>
 {% elsif page.version == "long" %}
   <div class="version-banner long">
     <strong>You are reading the long version.</strong>
     <span>Best if you want full context and technical detail.</span>
   </div>
-{% else %}
-  <div class="version-banner neutral">
-    <strong>Version not specified.</strong>
-    <span>Add <code>version: short</code> or <code>version: long</code> in the page front matter.</span>
-  </div>
 {% endif %}
+
 
 
 <div class="page-header">
