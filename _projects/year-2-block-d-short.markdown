@@ -28,6 +28,17 @@ duration: "8 Weeks (May 2025 - June 2025)"
 
 [Click here to check out a video playthrough of the game!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5) 
 
+<div class="video-embed">
+  <iframe
+    src="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5"
+    title="Video demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
 Zentera is a third-person puzzle-platformer where players use an extendable tongue to pull crates, activate switches, and solve physics-based challenges. The game was developed in a custom engine using agile practices across multiple sprints. The project focused on pushing the boundaries of multidisciplinary collaboration—merging level design, programming, art, and sound into a cohesive player experience. With iterative feedback loops, rigorous QA processes, and multiple early access releases, Zentera evolved rapidly into a polished gameplay prototype showcased on itch.io.
 
 [⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/zentera)
