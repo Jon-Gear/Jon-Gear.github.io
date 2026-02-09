@@ -9,7 +9,7 @@ short_url: /work/internship-1-short
 long_url: /work/internship-1-long
 categories: [work]
 image: /assets/images/internship-1/logo.png
-contributions: "Video-to-FBX Converter | Full-Body Tracking with XSens DOT Trackers"
+contributions: "Video-to-FBX Converter | VR Full-Body Tracking with XSens DOT Trackers"
 tools: "Unity, C#, Python, C++"
 platforms: "Virtual Reality (Meta Quest) | Windows"
 ---
@@ -29,14 +29,17 @@ SportsImproVR is a virtual reality training company specialized in baseball, sof
 
 ---
 
-### 📽️ Unity Video-to-FBX Converter Tool
+### 🏃‍♂️VR Full-Body Tracking with XSens DOT Trackers
 
 ![image1](../../assets/images/internship-1/tool-ui.jpg)
 
 **What it Does:**
+
+Full-Body tracking with XSens DOT Trackers
+
 Video-to-FBX converter is a tool which can convert multiple videos (mp4, mov) to an FBX animation all within Unity using [MoveAI](https://www.move.ai/).
 
-[Feel free to watch this video demonstration!](https://www.youtube.com/watch?v=G8KUSr6Kqww)
+<a class="cta-link" href="https://www.youtube.com/watch?v=G8KUSr6Kqww" target="_blank" rel="noopener">▶ Watch Converter Demo</a>
 
 **Key Features & Challenges:**
 * MoveAI API Intergration: the tool converts videos using MoveAI's API by launching a custom-made Python script in Unity. 
@@ -51,3 +54,24 @@ Video-to-FBX converter is a tool which can convert multiple videos (mp4, mov) to
 * Allowed for multiple video conversions in parallel, turning from a 15-minute consequitive conversion for 3 videos into a 5-minute parallel conversion for 3 videos (and more).
 
 ---
+
+### 📽️ Unity Video-to-FBX Converter Tool
+
+![image1](../../assets/images/internship-1/tool-ui.jpg)
+
+**What it Does:**
+Video-to-FBX converter is a tool which can convert multiple videos (mp4, mov) to an FBX animation all within Unity using [MoveAI](https://www.move.ai/).
+
+<a class="cta-link" href="https://www.youtube.com/watch?v=G8KUSr6Kqww" target="_blank" rel="noopener">▶ Watch Converter Demo</a>
+
+**Key Features & Challenges:**
+* MoveAI API Intergration: the tool converts videos using MoveAI's API by launching a custom-made Python script in Unity. 
+* Clear user interface: the tool provides an easy-to-use UI for a frictionless workflow.
+* Parallel Conversion: the tool uses Unity's tasks system to run multiple conversions at the same time.
+* User feedback per task: each task provides clear feedback on the job's status and progress.
+* Runs in the background: the tool runs in the background and doesn't disturb regular editor workflows.
+
+**Impact on the Company:**
+* Simplified the workflow for the senior programmer from a three-step operation (uploading videos to MoveAI, downloading the FBX, importing to Unity) into a one-click operation all within Unity, saving a lot of time.
+* Improved user feedback by providing clear status and progress per video within Unity, giving reassurance and understanding to the user.
+* Allowed for multiple video conversions in parallel, turning from a 15-minute consequitive conversion for 3 videos into a 5-minute parallel conversion for 3 videos (and more).

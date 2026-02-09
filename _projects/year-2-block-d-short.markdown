@@ -20,28 +20,21 @@ platforms: "Windows | PlayStation 5"
 duration: "8 Weeks (May 2025 - June 2025)"
 ---
 
-## 🐸 Zentera – A Voxel Puzzle Platformer!
+## 🐸 What is Zentera? A Voxel Puzzle Platformer!
 
-![image1](../../assets/images/Y2D/promo.png)
+What you are about to see is made in a **custom engine** made entirely from scratch.
 
-[Click here to visit our game page!](https://buas.itch.io/zentera)
+<a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">▶ Watch Game Demo</a>
 
-[Click here to check out a video playthrough of the game!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5) 
+<a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">🕹️ Visit Game Page</a>
 
-<div class="video-embed">
-  <iframe
-    src="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5"
-    title="Video demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-</div>
-
+<a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">⚙️ See Code Examples</a>
 
 Zentera is a third-person puzzle-platformer where players use an extendable tongue to pull crates, activate switches, and solve physics-based challenges. The game was developed in a custom engine using agile practices across multiple sprints. The project focused on pushing the boundaries of multidisciplinary collaboration—merging level design, programming, art, and sound into a cohesive player experience. With iterative feedback loops, rigorous QA processes, and multiple early access releases, Zentera evolved rapidly into a polished gameplay prototype showcased on itch.io.
 
-[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/zentera)
+
+![image1](../../assets/images/Y2D/promo.png)
+
 
 ---
 
@@ -49,7 +42,50 @@ Zentera is a third-person puzzle-platformer where players use an extendable tong
 
 ---
 
-### 🗂️ Leadership as PR Lead
+### ✨ Custom-Made Particle System
+
+![image1](../../assets/images/Y2D/particles.gif)
+
+**What it Does:**
+Developed a versatile particle system using EnTT ECS and integrated it with Angelscript for artists and designers to use flexibly in-engine.
+
+**Key Features & Challenges:**
+
+* Modeled functionality after Unity’s Particle System for familiarity (e.g., shape modules, color gradients).
+* Supported object pooling to drastically reduce performance costs—fixing issues like laggy footsteps particles.
+* Integrated particles directly into gameplay elements (e.g., portals, doors, fire, waterfalls).
+* Required close collaboration with artists to match aesthetic needs.
+
+**Impact on the Game:**
+
+* Enhanced visual feedback, bringing scenes to life with dust, fire, water, and interactive VFX.
+* Improved player experience with immediate and responsive visuals, aligning with puzzle outcomes.
+
+---
+
+### 🔊 Sound Effects Implementation
+
+![image1](../../assets/images/Y2D/sound-system.png)
+
+To see and hear the sound effects, [click here!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5)
+
+**What it Does:**
+Implemented FMOD sound events into gameplay scripts, synchronizing audio cues with actions like crate movement, levers, pressure plates, and player tongue interactions.
+
+**Key Features & Challenges:**
+
+* Collaborated with designers to gather and organize a comprehensive sound list tailored to gameplay.
+* Integrated FMOD events into the Angelscript codebase, aligning sounds with visual actions.
+* Added footsteps, tongue SFX, environmental ambience, and interactive sounds to levels.
+
+**Impact on the Game:**
+
+* Provided immersive audio feedback for all major interactions.
+* Elevated the game’s atmosphere and reinforced puzzle-solving moments.
+
+---
+
+### 🗂️ Leadership as Programming Representative Lead
 
 ![image1](../../assets/images/Y2D/team.jpg)
 
@@ -92,48 +128,8 @@ Led the process of preparing and publishing Zentera on itch.io, including coordi
 
 ---
 
-### ✨ Particle System
 
-![image1](../../assets/images/Y2D/particles.gif)
 
-**What it Does:**
-Developed a versatile particle system using EnTT ECS and integrated it with Angelscript for artists and designers to use flexibly in-engine.
-
-**Key Features & Challenges:**
-
-* Modeled functionality after Unity’s Particle System for familiarity (e.g., shape modules, color gradients).
-* Supported object pooling to drastically reduce performance costs—fixing issues like laggy footsteps particles.
-* Integrated particles directly into gameplay elements (e.g., portals, doors, fire, waterfalls).
-* Required close collaboration with artists to match aesthetic needs.
-
-**Impact on the Game:**
-
-* Enhanced visual feedback, bringing scenes to life with dust, fire, water, and interactive VFX.
-* Improved player experience with immediate and responsive visuals, aligning with puzzle outcomes.
-
----
-
-### 🔊 Sound Effects Implementation
-
-![image1](../../assets/images/Y2D/sound-system.png)
-
-To see and hear the sound effects, [click here!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5)
-
-**What it Does:**
-Implemented FMOD sound events into gameplay scripts, synchronizing audio cues with actions like crate movement, levers, pressure plates, and player tongue interactions.
-
-**Key Features & Challenges:**
-
-* Collaborated with designers to gather and organize a comprehensive sound list tailored to gameplay.
-* Integrated FMOD events into the Angelscript codebase, aligning sounds with visual actions.
-* Added footsteps, tongue SFX, environmental ambience, and interactive sounds to levels.
-
-**Impact on the Game:**
-
-* Provided immersive audio feedback for all major interactions.
-* Elevated the game’s atmosphere and reinforced puzzle-solving moments.
-
----
 
 ### ✅ QA Process Improvements
 
