@@ -2,10 +2,14 @@
 layout: project
 title: "Custom C++ Game Engine"
 role: "Engine Programmer"
-version: none
+
+version: short
+short_url: /projects/year-2-block-a-short
+long_url: /projects/year-2-block-a-long
+
 date: 2024-11-01
 categories: [projects]
-image: /assets/images/Y2A/main.gif
+image: assets/images/Y2A/W5.gif
 description: "Custom C++ Engine was a solo project. The project features core engine functionality such as an ECS Architecture, an ImGui editor, a GLTF importer, a Resource manager, full scene serialization using Cereal, a grid-based tile editor, and support on Windows and PS5."
 contributions: "ECS Design (EnTT) | Particle System | ImGui Editor & Gizmo Tooling | GLTF Runtime Loader | Resource Manager | Hierarchy System | Cross-Platform Engine Abstractions | JSON Serialization | Tile-Based Level Editor"
 tools: "C++, OpenGL, GLSL, EnTT, ImGui, Cereal, STB, tinygltf, ImGuizmo"
