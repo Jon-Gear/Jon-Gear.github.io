@@ -206,9 +206,9 @@ A small selection of projects I am most proud of, chosen for clear impact, stron
 Earlier work and experiments, kept here for extra context and range.
 
 <div class="project-list">
-  {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+ {% assign sorted_projects = site.projects | sort: "date" | reverse %}
   {% for project in sorted_projects %}
-    {% if project.categories contains "projects"%}
+    {% if project.categories contains "projects" and (project.version == "short" or project.version == "none") %}
       <div class="project-card">
         {% if project.image %}
           <a href="{{ project.url }}" class="project-image-link">

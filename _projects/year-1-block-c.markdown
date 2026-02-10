@@ -2,6 +2,7 @@
 layout: project
 title: "Light Pong: Custom C++ CPU-based Raytracing Engine"
 role: "Programmer"
+version: none
 date: 2024-04-12
 categories: [projects]
 image: /assets/images/Y1C/main.gif

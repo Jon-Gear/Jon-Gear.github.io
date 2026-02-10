@@ -2,6 +2,7 @@
 layout: project
 title: "IgKnighted: Local Multiplayer Arena Shooter in Unreal Engine"
 role: "Programmer"
+version: none
 date: 2024-06-28
 categories: [featured_projects]
 version: none

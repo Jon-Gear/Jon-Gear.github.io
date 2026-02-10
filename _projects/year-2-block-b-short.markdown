@@ -3,6 +3,11 @@ layout: project
 title: "Custom C++ Terrain Editor"
 role: "Engine Programmer"
 date: 2025-01-24
+
+version: short
+short_url: /projects/year-2-block-b-short
+long_url: /projects/year-2-block-b-long
+
 categories: [projects]
 image: /assets/images/Y2B/main.gif
 description: "Custom C++ Terrain Editor was a solo research project. The project features editable terrain and variety of brushes. The Terrain Editor would later become based for the Fire Ant Engine."
