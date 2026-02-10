@@ -4,7 +4,7 @@ title: "Internship at SportsImproVR"
 role: "Tools Programmer"
 start_date: 2025-11-10
 end_date: 2026-04-10
-version: short
+version: none
 short_url: /work/internship-1-short
 long_url: /work/internship-1-long
 categories: [work]

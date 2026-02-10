@@ -83,7 +83,7 @@ A few roles where I helped teams ship by building tools, improving workflows, an
 <div class="project-list">
   {% assign sorted_work = site.work | sort: "start_date" | reverse %}
   {% for job in sorted_work %}
-    {% if job.categories contains "work" and job.version == "short"%}
+    {% if job.categories contains "work" and (job.version == "short" or job.version == "none")%}
       <div class="project-card">
         {% if job.image %}
           <a href="{{ job.url }}" class="project-image-link">
