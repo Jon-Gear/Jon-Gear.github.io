@@ -19,7 +19,7 @@ duration: "8 Weeks (Sep 2024 - Nov 2024)"
 
 This project is a fully custom-built C++ game engine designed to support real-time simulation, modular development, and cross-platform deployment. The engine provides a comprehensive runtime environment with systems for graphics, physics, input, audio, resource management, and user interface tooling. It follows an Entity-Component-System (ECS) architecture powered by EnTT, allowing for efficient, scalable scene management.
 
-[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/custom_engine)
+<a class="cta-link" href="https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/custom_engine" target="_blank" rel="noopener">⚙️ See Code Examples</a>
 
 
 ---

@@ -21,9 +21,10 @@ The **Custom C++ Terrain Editor** is a solo-developed terrain sculpting tool and
 
 This project served as the **predecessor to the Terrain Editor in Fire Ant**, laying the groundwork for compute-driven tools and brush architecture used in later engine projects.
 
-[I have written a blog post about the project here.](https://jongear.hashnode.dev/custom-c-engine-terrain-editor)
+<a class="cta-link" href="https://jongear.hashnode.dev/custom-c-engine-terrain-editor" target="_blank" rel="noopener">📝 Read Project Blogpost</a>
 
-[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/fireant)
+
+<a class="cta-link" href="https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/fireant" target="_blank" rel="noopener">⚙️ See Code Examples</a>
 
 ---
 

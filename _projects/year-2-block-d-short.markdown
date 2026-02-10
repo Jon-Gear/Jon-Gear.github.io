@@ -26,9 +26,9 @@ What you are about to see is made in a **custom engine** made entirely from scra
 
 <a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">▶ Watch Game Demo</a>
 
-<a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">🕹️ Visit Game Page</a>
+<a class="cta-link" href="https://buas.itch.io/zentera" target="_blank" rel="noopener">🕹️ Visit Game Page</a>
 
-<a class="cta-link" href="https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5" target="_blank" rel="noopener">⚙️ See Code Examples</a>
+<a class="cta-link" href="https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/zentera" target="_blank" rel="noopener">⚙️ See Code Examples</a>
 
 Zentera is a third-person puzzle-platformer where players use an extendable tongue to pull crates, activate switches, and solve physics-based challenges. The game was developed in a custom engine using agile practices across multiple sprints. The project focused on pushing the boundaries of multidisciplinary collaboration—merging level design, programming, art, and sound into a cohesive player experience. With iterative feedback loops, rigorous QA processes, and multiple early access releases, Zentera evolved rapidly into a polished gameplay prototype showcased on itch.io.
 
