@@ -5,6 +5,9 @@ role: "Engine Programmer"
 
 date: 2025-04-11
 version: short
+short_url: /projects/year-2-block-c-short
+long_url: /projects/year-2-block-c-long
+
 categories: [featured_projects]
 image: /assets/images/Y2C/main_large.gif
 description: "Fire Ant Engine is a continuation of my custom Terrain Editor. The team was joined by seven talented programmers. The project features a prefab system, a terrain editor, flow-fields for AI agent navigation, an in-engine UI editor, optimizations which allowed a support for a large terrain map and many units, and support on Windows and Nintendo Switch."
