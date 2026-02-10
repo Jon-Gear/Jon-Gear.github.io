@@ -20,157 +20,231 @@ platforms: "Windows | PlayStation 5"
 duration: "8 Weeks (May 2025 - June 2025)"
 ---
 
-## 🐸 Zentera – A Voxel Puzzle Platformer!
+## 🎉 My Contribution: Particle System & Sound Effects
 
-![image1](../../assets/images/Y2D/promo.png)
+My individual development work was in line with the allocated project hours.
 
-[Click here to visit our game page!](https://buas.itch.io/zentera)
+### 🟠🟡 Relevance towards Requirements
 
-[Click here to check out a video playthrough of the game!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5) 
+For the developed features to be directly relevant to the project, I have asked the artists what they want to have in the particle system. We have used Unity as a point of reference. 
 
-Zentera is a third-person puzzle-platformer where players use an extendable tongue to pull crates, activate switches, and solve physics-based challenges. The game was developed in a custom engine using agile practices across multiple sprints. The project focused on pushing the boundaries of multidisciplinary collaboration—merging level design, programming, art, and sound into a cohesive player experience. With iterative feedback loops, rigorous QA processes, and multiple early access releases, Zentera evolved rapidly into a polished gameplay prototype showcased on itch.io.
+![image1](../../assets/images/Y2D/asking-what-artists-want-1.png)
 
-[⚙️ Link to code examples](https://github.com/Jon-Gear/Jon-Gear.github.io/tree/main/_code_samples/zentera)
+![image1](../../assets/images/Y2D/asking-what-artists-want-2.png)
 
----
+![image1](../../assets/images/Y2D/asking-what-artists-want-3.png)
 
-## 🔨 My Contributions
+All of this has allowed us to save time and effort on things that truly matter.
 
----
+In regards to the sounds, I have approached Simon with a list of sounds which I have collected myself after playing a build of our game.
 
-### 🗂️ Leadership as PR Lead
+![image1](../../assets/images/Y2D/consulting-designers-on-sounds-1.png)
 
-![image1](../../assets/images/Y2D/team.jpg)
+![image1](../../assets/images/Y2D/consulting-designers-on-sounds-2.png)
 
-**What it Does:**
-Served as the PR (Programming Representative) lead, taking on coordination and communication responsibilities across the team and with external stakeholders.
+![image1](../../assets/images/Y2D/consulting-designers-on-sounds-3.png)
 
-**Key Features & Challenges:**
-* Acted as the primary point of contact for programming-related issues, ensuring clear communication between team members, producers, and instructors.
-* Facilitated sprint planning, retrospectives, and standups by gathering status updates and aligning team priorities.
-* Organized and led PR lead meetings, documented discussions, and helped adapt planning when challenges or scope changes arose.
-* Provided transparency on task progress—regularly checking in with team members and maintaining awareness of overall project status.
+This way, we knew exactly what sounds were needed in our game, allowing for efficiency.
 
-**Impact on the Game:**
-* Improved team organization and accountability, helping maintain a steady development pace.
-* Reduced miscommunication between disciplines by centralizing updates and feedback.
-* Enabled faster identification of blockers and risks, allowing the team to address them proactively.
+### 🟢 Direct/Indirect Contribution Towards Other Disciplines (Multi-Disciplinary Development)
 
----
+The particle system has been a great direct contribution to the artists. 
 
-### 🚀 Release Management
+First, as I have mentioned before, I have asked the artists what they want to have in the particle system. We have used Unity as a point of reference. 
 
-![image1](../../assets/images/Y2D/release.gif)
+![image1](../../assets/images/Y2D/asking-what-artists-want-1.png)
 
-**What it Does:**
-Led the process of preparing and publishing Zentera on itch.io, including coordinating page creation, setting minimum specs, and managing marketing assets.
+![image1](../../assets/images/Y2D/asking-what-artists-want-2.png)
 
-**Key Features & Challenges:**
+![image1](../../assets/images/Y2D/asking-what-artists-want-3.png)
 
-* Coordinated with the team to add all members as contributors for direct page editing.
-* Collected and curated best screenshots, ensuring coverage of all levels and characters.
-* Created the credits table for clarity and compactness.
-* Defined and communicated hardware requirements after discovering engine limitations on specific GPUs.
-* Contributed to trailer content by creating unique scenes, like the heart effect between characters, to enhance marketing appeal.
+This allowed me to develop features which would be directly relevant to the project, allowing us to save time and effort on things that truly matter.
 
-**Impact on the Game:**
+The particle system has been a great indirect contribution to the programmers by being optimized.
 
-* Ensured a professional online presence.
-* Facilitated early access updates, reflecting player feedback through changelogs.
-* Improved visibility and player onboarding with detailed instructions, visuals, and system requirements.
+![image1](../../assets/images/Y2D/before-optimization.png)
 
----
+![image1](../../assets/images/Y2D/correctly-identifying-the-lag-cause.png)
 
-### ✨ Particle System
+![image1](../../assets/images/Y2D/after-optimization.png)
 
-![image1](../../assets/images/Y2D/particles.gif)
+I have collaborated and agreed with graphics to have 512 particles in the game.
 
-**What it Does:**
-Developed a versatile particle system using EnTT ECS and integrated it with Angelscript for artists and designers to use flexibly in-engine.
+The particle system has been a great indirect contribution to the gameplay programmmers by being integrated in Angelscript. Here is the integration below. I have talked and consulted with gameplay programmers on how to successfully integrate it into the scripting engine.
 
-**Key Features & Challenges:**
+```cpp
+#pragma once
 
-* Modeled functionality after Unity’s Particle System for familiarity (e.g., shape modules, color gradients).
-* Supported object pooling to drastically reduce performance costs—fixing issues like laggy footsteps particles.
-* Integrated particles directly into gameplay elements (e.g., portals, doors, fire, waterfalls).
-* Required close collaboration with artists to match aesthetic needs.
+#include <angelscript/angelscript.h>
+#include "components/particle_system_component.hpp"
+#include "engine.hpp"
+#include "ecs.hpp"
+#include "tools/log.hpp"
+#include "scripting/scripting_engine.hpp"
+#include <tools/gradient.hpp>
 
-**Impact on the Game:**
+namespace kudzu {
 
-* Enhanced visual feedback, bringing scenes to life with dust, fire, water, and interactive VFX.
-* Improved player experience with immediate and responsive visuals, aligning with puzzle outcomes.
+static Gradient& ParticleSystem_GetGradient(ParticleSystemComponent* self) {
+    assert(self);
+    return self->color_gradient;
+}
 
----
+static void register_particle_system(asIScriptEngine* engine) {
+    int r = engine->RegisterObjectType("ParticleSystemComponent", sizeof(ParticleSystemComponent), asOBJ_REF | asOBJ_NOCOUNT);
+    assert(r >= 0);
 
-### 🔊 Sound Effects Implementation
+    r = engine->RegisterObjectMethod(
+        "ParticleSystemComponent", "gradient& get_gradient()", asFUNCTION(ParticleSystem_GetGradient), asCALL_CDECL_OBJLAST
+    );
+    assert(r >= 0);
+}
 
-![image1](../../assets/images/Y2D/sound-system.png)
+}  // namespace kudzu
+```
 
-To see and hear the sound effects, [click here!](https://youtu.be/SLDE2BP9cbw?si=f93mrQr05FmAEwb5)
+This addition has allowed the gameplay programmers to edit the color of the particle system for the footsteps so that the dust would be the color of the ground.
 
-**What it Does:**
-Implemented FMOD sound events into gameplay scripts, synchronizing audio cues with actions like crate movement, levers, pressure plates, and player tongue interactions.
+In regards to sounds, have been closely working together on FMOD with designers. Simon has been collecting the sounds on the internet and compiling them into the bank where I have been implementing the sound events to each relevant gameplay script. I have consulted frequently other gameplay programmers the best way to implement sounds in their scripts.
 
-**Key Features & Challenges:**
+Here is an example of a `pressure_plate.as` script below, an example of combination of collaboration between me, designers, and other gameplay programmers:
 
-* Collaborated with designers to gather and organize a comprehensive sound list tailored to gameplay.
-* Integrated FMOD events into the Angelscript codebase, aligning sounds with visual actions.
-* Added footsteps, tongue SFX, environmental ambience, and interactive sounds to levels.
+```
+#include "scripts/bakje/interactable.as"
 
-**Impact on the Game:**
+shared class pressure_plate : IKudzu {
+    //... other code
+    
+    [editable] [serialize] 
+    Audio::SoundEvent press_sound_event;
+    
+    [editable] [serialize] 
+    Audio::SoundEvent unpress_sound_event;
+    
+    //... other code
 
-* Provided immersive audio feedback for all major interactions.
-* Elevated the game’s atmosphere and reinforced puzzle-solving moments.
+    void enter(GameEntity other, vec3) {
+        if (other.get_layer() != Layers::PLAYER) return;
+        player_standing = true;
+        interact_all();
+    }
 
----
+    void exit(GameEntity other, vec3) {
+        if (other.get_layer() != Layers::PLAYER) return;
+        player_standing = false;  
+        interact_all();
+    }
+    
+    //... other code
 
-### ✅ QA Process Improvements
+    void interact_all(){
+        for (int i = 0; i < interact_entities.length(); i++) {
+            GameEntity entity = interact_entities[i];
 
-![image1](../../assets/images/Y2D/qa-process.png)
+            IKudzu@ script = entity.get_script("interactable");
+            interactable@ interactable = cast<interactable>(script);
 
-**What it Does:**
-Helped establish and improve the team’s QA processes to ensure faster, clearer bug tracking and resolution.
+            interactable.interact(self);
+        }
 
-**Key Features & Challenges:**
+        interact_active = !interact_active;
 
-* Co-created a Discord bug-report channel to supplement GitHub issues—boosting accessibility and response speed.
-* Established a structured written QA process (review buddies, build showcases, vision holder roles).
-* Provided detailed bug reports with reproduction steps and visual references.
+        if(interact_active) {
+            press_sound_event.start();
+        } else {
+            unpress_sound_event.start();
+        }
+    }
+    //... other code
+}
+```
 
-**Impact on the Game:**
+In summary, my work have been a great contribution to artists, graphics programmers, gameplay programmers, and designers by helping them with creating particles, being an optimized particle system, allowing the particle system to be accessed in the scripting engine, adding sounds to the relevant gameplay scripts, and working together with designers to get all of the sounds to FMOD and into the engine.
 
-* Increased efficiency in identifying, communicating, and resolving bugs.
-* Ensured critical issues were prioritized and fixed within tight sprint schedules.
+### 🔵 Presence and Significance in The Final Project Deliverable
 
----
+The particle system and sounds are one of the most significant parts of the game, they are an ever-present contribution, appearing in every single level of the game, even inside the player itself. They add an amazing final touch of the game, creating detail and immersion for the player to marvel at.
 
-### 🐛 Bug Reporting & Fixing
+#### Player Particles & Sounds
 
-![image1](../../assets/images/Y2D/bug-report.png)
+Here is a video of the particles and sounds present on the player in the final project deliverable:
 
-**What it Does:**
-Proactively identified, reported, and resolved bugs affecting gameplay, visuals, and performance.
+<video width="640" height="480" controls>
+  <source src="/assets/images/Y2D/player-particles-and-sounds.mp4" type="video/mp4">
+</video>
 
-**Key Features & Challenges:**
+The music has been turned off to hear the player sounds more easily.
 
-* Discovered and documented high-impact issues like missing gate elements, lighting mismatches, and crate collision errors.
-* Fixed performance-breaking bugs (e.g., particle systems causing frame drops due to excessive entity spawning).
-* Reviewed and tested PRs, giving feedback and suggesting improvements across disciplines.
+In the video above, you will see that:
+- The player leaves behind a trail of particles which change colors depending on the current color of the voxel they stood on.
+- The player has footstep sound effects which leave a very squishy and sloppy sound effect, like Squidward's footsteps.
+- The player has licking sound effects, specifically when they stick out and pull back the tongue.
 
-**Impact on the Game:**
+#### Main Menu Level Particles & Sounds
 
-* Improved gameplay stability and experience.
-* Reduced blockers for designers and artists by keeping builds playable and polished.
+Here is a video of the particles and sounds present in the main menu level in the final project deliverable:
+
+<video width="640" height="480" controls>
+  <source src="/assets/images/Y2D/main-menu-particles-and-sounds.mp4" type="video/mp4">
+</video>
+
+In the video above, you will see that:
+- Each portal uses a particle system VFX, each portal with different colors
+- Hearts emitting from Sora uses a collection of particle systems to form this specific heart shape.
+- The main menu level has BGM and ambience noise, allowing for more immersion.
+
+#### Onboarding Level Particles & Sounds
+
+Here is a video of the particles and sounds present in the onboarding level in the final project deliverable:
+
+<video width="640" height="480" controls>
+  <source src="/assets/images/Y2D/onboarding-level-particles-and-sounds.mp4" type="video/mp4">
+</video>
+
+In the video above, you will see that:
+- Each of the campfires and torches use a fire particle system VFX. 
+- The crate emits sounds upon moving.
+- The lever emits sounds upon activation.
+- The door emits a sound upon opening and play a large dust particle system VFX.
+- The onboarding level has BGM and ambience noise, allowing for more immersion.
+
+#### Level 1 Particles & Sounds
+
+Here is a video of the particles and sounds present in the level 1 in the final project deliverable:
+
+<video width="640" height="480" controls>
+  <source src="/assets/images/Y2D/level-1-particles-and-sounds.mp4" type="video/mp4">
+</video>
+
+In the video above, you will see that:
+- A tripwire emits a sound upon snapping.
+- Logs emits a sound upon crashing down and breaking the planks.
+- Each of the campfires and torches use a fire particle system VFX. 
+- Each of the waterfalls use a water foam particle system VFX.
+- The crate emits sounds upon moving.
+- The lever emits sounds upon activation.
+- The button emits sounds upon activation.
+- The pressure plates emit sounds upon activation and deactivation.
+- The door emits a sound upon opening and play a large dust particle system VFX.
+- The metal gates emit a sound upon opening.
+- The level 1 has BGM and ambience noise, allowing for more immersion.
 
 
----
+#### Level 2 Particles & Sounds
 
-## 🎯  Overall Impact
+Here is a video of the particles and sounds present in the level 2 in the final project deliverable:
 
-My contributions provided **core systems and processes** integral to the team’s success:
-* Delivered essential technical features (particle system and sound integration) present in every level and central to gameplay.
-* Significantly improved QA processes, ensuring bugs were identified, reported, and resolved efficiently.
-* Led the release effort, from minimum specs identification to polished itch.io presentation, enabling timely early access updates.
-* Acted as a bridge between disciplines—aligning programming, art, design, and marketing efforts for cohesive project delivery.
+<video width="640" height="480" controls>
+  <source src="/assets/images/Y2D/level-2-particles-and-sounds.mp4" type="video/mp4">
+</video>
+
+In the video above, you will see that:
+- Each of the campfires and torches use a fire particle system VFX. 
+- Each of the waterfalls use a water foam particle system VFX.
+- The crate emits sounds upon moving.
+- The pressure plates emit sounds upon activation and deactivation.
+- The door emits a sound upon opening and play a large dust particle system VFX.
+- The level 2 has BGM and ambience noise, allowing for more immersion.
 
 
+All of this goes to show that my contributions have an incredibly large presence in the entire game, being present in all levels and even in the player itself.
