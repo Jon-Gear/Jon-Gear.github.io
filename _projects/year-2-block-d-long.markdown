@@ -9,7 +9,7 @@ short_url: /projects/year-2-block-d-short
 long_url: /projects/year-2-block-d-long
 date: 2025-06-27
 categories: [featured_projects]
-image: ../../assets/images/Y2D/main.gif
+image: assets/images/Y2D/main.gif
 
 description: "Embark on an adventure with Gori, a clever lizard-like creature, in this voxel-based puzzle platformer. Use his versatile tongue to push, pull, swing, and solve intricate dioramic puzzles in charming miniature voxel worlds. Gori wants to impress his beloved partner by bringing beautiful little trinkets from each level."
 
