@@ -7,7 +7,7 @@ layout: default
 
 🎓 I'm a 3rd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
 
-💼 I'm a Tools Programmer intern at SportsImproVR.
+💼 I'm an Engine & Tools Programmer Intern at [Flashgroup XR](https://flashgroupxr.com/).
 
 I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuously improving my skills.
 

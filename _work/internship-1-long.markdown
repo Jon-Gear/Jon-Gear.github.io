@@ -4,7 +4,7 @@ title: "Internship at SportsImproVR"
 role: "Tools Programmer"
 start_date: 2025-11-10
 end_date: 2026-04-10
-version: short
+version: long
 short_url: /work/internship-1-short
 long_url: /work/internship-1-long
 categories: [work]
@@ -31,7 +31,7 @@ SportsImproVR is a virtual reality training company specialized in baseball, sof
 
 ### 🏃‍♂️VR Full-Body Tracking with XSens DOT Trackers [WIP]
 
-![image1](../../assets/images/internship-1/fbt.gif)
+![image1](../../assets/images/internship-1/trackers-demo.gif)
 
 **❗This project currently is in active development!** 
 

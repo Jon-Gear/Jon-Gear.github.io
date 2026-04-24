@@ -1,13 +1,15 @@
 ---
 layout: project
-title: "Tools Developer Internship @ Apollo Journey"
-company: "Apollo Journey"
-role: "Tools Developer"
+title: "Internship at Flashgroup XR"
+company: "Flashgroup XR"
+role: "Engine & Tools Programmer"
 start_date: 2026-04-10
 end_date: 2026-10-10
 version: short
-categories: [1work]
-image: /assets/images/internship-2/logo.png
+short_url: /work/internship-2-short
+long_url: /work/internship-2-long
+categories: [work]
+image: /assets/images/internship-2/main.png
 description: "Coming soon..."
 contributions: "Coming soon..."
 tools: "Unity, C#, Python, C++"
