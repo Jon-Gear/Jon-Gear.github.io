@@ -1,0 +1,53 @@
+---
+layout: project
+title: "<PROJECT TITLE>"
+role: "<YOUR ROLE>"
+
+version: <short | long>
+short_url: <link>
+long_url: <link>
+
+date: <YYYY-MM-DD>
+categories: [projects]
+image: <thumbnail path>
+description: "<1–2 sentence high-level summary>"
+contributions: "<KEY CONTRIBUTIONS PIPE-SEPARATED>"
+tools: "<TECH STACK>"
+team_size: "<Solo / X people>"
+platforms: "<Platforms>"
+duration: "<Timeframe>"
+---
+
+# 🔹 SHORT VERSION (SCAN-FRIENDLY)
+
+## 🚀 Summary
+
+A concise overview of the project:
+- What was the goal?
+- What did you build?
+- Why does it matter?
+
+## 🧠 My Contributions (At a Glance)
+
+- Contribution 1
+- Contribution 2
+- Contribution 3
+
+## ⚙️ Key Outcome
+
+- Result / achievement
+- Performance improvement / feature shipped
+- What worked well
+
+## ⚠️ Biggest Challenge
+
+**Problem:**  
+Brief description  
+
+**Solution:**  
+Brief explanation  
+
+**Result:**  
+What changed
+
+---

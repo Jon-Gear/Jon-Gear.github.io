@@ -1,22 +1,24 @@
 ---
 layout: project
-title: "Internship at Flashgroup XR"
-company: "Flashgroup XR"
-role: "Engine & Tools Programmer"
-start_date: 2026-04-10
-end_date: 2026-10-10
-version: short
-short_url: /work/internship-2-short
-long_url: /work/internship-2-long
-categories: [work]
-image: /assets/images/internship-2/main.png
-contributions: "Collider Editor | Primitive Collider Generator"
-tools: "Unity, C#, Python, C++"
-platforms: "Virtual Reality (Meta Quest) | Windows"
-duration: "9 Months (Apr 2026 - Nov 2026)"
+title: "<PROJECT TITLE>"
+role: "<YOUR ROLE>"
+
+version: <short | long>
+short_url: <link>
+long_url: <link>
+
+date: <YYYY-MM-DD>
+categories: [projects]
+image: <thumbnail path>
+description: "<Write a concise 1–2 sentence summary explaining what the project is, what problem it solves, and why it matters.>"
+contributions: "<List your key contributions separated by | (focus on impact, not tasks)>"
+tools: "<List core technologies, frameworks, and tools used>"
+team_size: "<Solo / X people>"
+platforms: "<Target platforms (PC, Web, Mobile, etc.)>"
+duration: "<Timeframe (e.g., 3 months)>"
 ---
 
-# 💼 Internship at Flashgroup XR
+# 💼 Work/Project Title
 
 Write a clear, human-readable project title. Avoid internal codenames unless explained.
 

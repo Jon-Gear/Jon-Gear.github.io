@@ -1,81 +1,482 @@
 ---
 layout: work
 title: "Internship at SportsImproVR"
-role: "Tools Programmer"
-start_date: 2025-11-10
-end_date: 2026-04-10
+role: "Tools & VR Programmer"
+
 version: long
 short_url: /work/internship-1-short
 long_url: /work/internship-1-long
+
+start_date: 2025-11-10
+end_date: 2026-04-10
+
 categories: [work]
 image: /assets/images/internship-1/fbt.gif
-contributions: "VR-Chat-Based Full-Body Tracking in Unity | Video-to-FBX Converter Tool in Unity"
-tools: "Unity, Android, C#, Python, C++, Bluetooth LE, Inertial Measurement Units"
-platforms: "Virtual Reality (Meta Quest) | Windows | Android"
+description: "A VR tools and systems internship focused on automating motion capture workflows and building a full-body tracking solution for sports training in Unity."
+
+contributions: "Video-to-FBX automation tool | Full-body tracking system research & implementation"
+
+tools: "Unity, C#, Python, Android, Bluetooth LE, OSC, VR (Meta Quest), Xsens, HaritoraX"
+platforms: "VR (Meta Quest) | Windows | Android"
+duration: "10+ weeks"
 ---
 
-## ⚾ About SportsImproVR
 
-![image1](../../assets/images/internship-1/page.png)
+# 💼 Internship at SportsImproVR
 
+This internship was not just about building features — it was about solving messy, real-world problems where the solution was often unclear.
 
-SportsImproVR is a virtual reality training company specialized in baseball, softball, and tennis.
+I worked on two major areas:
 
-[Click to visit the company website!](https://sportsimprovr.com/en/) 
+- 🎥 Automating motion capture workflows  
+- 🕺 Building a full-body tracking system for VR training  
 
----
-
-## 🔨 My Contributions
-
----
-
-### 🏃‍♂️VR Full-Body Tracking with XSens DOT Trackers [WIP]
-
-![image1](../../assets/images/internship-1/trackers-demo.gif)
-
-**❗This project currently is in active development!** 
-
-Core tracking and rotation mapping are implemented. I am currently validating position and scaling from test objects to a full body rig.
-
-**What it Does:**
-
-Full Body tracking for Meta Quest using Xsens DOT trackers inside Unity.
-
-The project streams live motion data from multiple Xsens DOT trackers over Bluetooth LE into a standalone Quest build, then maps that data onto in game objects and a body rig to drive full body movement.
-
-
-**Key Features & Challenges:**
-
-- Feasibility first: proved that the entire idea is possible and that trackers can indeed connect to the Meta Quest through Bluetooth by getting a single tracker connected with the example XSens app.
-- Bluetooth LE integration in Unity: used a Unity BLE package to scan, connect, subscribe to notifications, and handle reconnects on Quest.
-- Services and characteristics: learned and implemented the BLE model to find the right services and characteristics, then subscribe to the correct data streams.
-- Decoding live sensor output: extracted usable orientation and motion data from the incoming packets and built debug tooling to validate correctness.
-- Rotation mapping and calibration: solved coordinate space and quaternion issues so the cube rotation matches the real tracker, including offsets and axis remapping.
-- Position tracking work in progress: exploring approaches for positional movement, dealing with IMU drift, filtering, and reset strategies.
-
-**Impact on the Project:**
-- Established a working pipeline from Xsens DOT to Quest in Unity, de risking the technical unknowns early.
-- Produced a solid rotation mapping foundation that can be reused for multiple trackers and avatar bones.
-- Defined clear next steps for position by narrowing the problem to drift and reference constraints, guiding the roadmap towards IK or hybrid anchoring.
+Both required deep technical exploration, experimentation, and decision-making under uncertainty.
 
 ---
 
-### 📽️ Unity Video-to-FBX Converter Tool
+# 👤 Zhangir Before the Project
 
-![image1](../../assets/images/internship-1/tool-ui.gif)
+Before starting:
 
-**What it Does:**
+- Strong **systems & low-level programming mindset**
+- Comfortable building tools and engine-level features
+- Limited experience with:
+  - VR development
+  - Android builds
+  - Bluetooth communication
+  - Motion capture pipelines
 
-Video-to-FBX converter is a tool which can convert multiple videos (mp4, mov) to an FBX animation all within Unity using [MoveAI](https://www.move.ai/).
+Most importantly:
+> I was used to problems where the solution *exists*.
 
-**Key Features & Challenges:**
-* MoveAI API Intergration: the tool converts videos using MoveAI's API by launching a custom-made Python script in Unity. 
-* Clear user interface: the tool provides an easy-to-use UI for a frictionless workflow.
-* Parallel Conversion: the tool uses Unity's tasks system to run multiple conversions at the same time.
-* User feedback per task: each task provides clear feedback on the job's status and progress.
-* Runs in the background: the tool runs in the background and doesn't disturb regular editor workflows.
+This internship forced me into problems where:
+> The solution might not even be possible.
 
-**Impact on the Company:**
-* Simplified the workflow for the senior programmer from a three-step operation (uploading videos to MoveAI, downloading the FBX, importing to Unity) into a one-click operation all within Unity, saving a lot of time.
-* Improved user feedback by providing clear status and progress per video within Unity, giving reassurance and understanding to the user.
-* Allowed for multiple video conversions in parallel, turning from a 15-minute consequitive conversion for 3 videos into a 5-minute parallel conversion for 3 videos (and more).
+---
+
+# 🔨 My Contributions
+
+---
+
+# 🎥 Contribution 1: Video-to-FBX Converter
+
+## 🎯 The Goal
+
+The company had a painful workflow:
+
+1. Upload video to MoveAI  
+2. Wait  
+3. Download files  
+4. Import into Unity  
+5. Clean up unnecessary data  
+
+This process was:
+- Slow ⏳
+- Manual 🖱️
+- Error-prone ⚠️
+
+### The Vision
+
+> “What if this entire pipeline was just one button inside Unity?”
+
+---
+
+## ⚔️ Challenge 1: Bridging Unity and Python
+
+### ❓ Problem
+
+MoveAI only provided a **Python API**.
+
+Unity uses C#.
+
+There was no direct way to connect them.
+
+---
+
+### 🧩 Why it was Hard
+
+- Cross-language execution (C# → Python)
+- File handling across environments
+- Debugging becomes harder across boundaries
+
+---
+
+### 💡 Solution
+
+I started small:
+
+- Created a Python script that writes a file
+- Triggered it from Unity
+
+Then scaled up:
+
+- Integrated MoveAI API
+- Passed video paths as input
+- Returned FBX data into Unity
+
+---
+
+### ✅ Result
+
+A working pipeline:
+> Unity → Python → MoveAI → Unity
+
+---
+
+## ⚔️ Challenge 2: Editor Freezing
+
+### ❓ Problem
+
+Each conversion took ~15 minutes.
+
+Unity completely froze during this time.
+
+---
+
+### 🧩 Why it was Hard
+
+- Unity runs on a **main thread**
+- Blocking operations freeze the editor
+
+---
+
+### 💡 Solution
+
+- Moved execution into **background tasks**
+- Kept Unity responsive during processing
+
+---
+
+### ✅ Result
+
+- Editor stays usable
+- Workflow no longer blocked
+
+---
+
+## ⚔️ Challenge 3: Sequential Processing Bottleneck
+
+### ❓ Problem
+
+Videos processed one-by-one.
+
+10 videos = hours of waiting.
+
+---
+
+### 🧩 Why it was Hard
+
+- Python parallelism unreliable
+- Needed per-task tracking
+
+---
+
+### 💡 Solution
+
+Instead of forcing Python:
+
+> I moved parallelism into Unity.
+
+- Each video = separate task
+- Independent progress tracking
+
+---
+
+### ✅ Result
+
+- Parallel processing ⚡
+- Massive time savings
+
+---
+
+## ⚔️ Challenge 4: UX Was Terrible
+
+### ❓ Problem
+
+- Users had to manually copy files
+- No feedback
+- No validation
+
+---
+
+### 💡 Solution
+
+I redesigned the tool:
+
+- 📂 Native file browser
+- ⚠️ Error/warning system
+- 📊 Progress bars per video
+- 🧭 Clear UI layout
+
+---
+
+### ✅ Result
+
+From:
+> “Hacky internal tool”
+
+To:
+> “Production-ready pipeline”
+
+---
+
+## 💥 Final Impact
+
+Before:
+- Manual, slow, frustrating workflow
+
+After:
+- One-click automation
+- Scalable pipeline
+- Developer-friendly tool
+
+---
+
+# 🕺 Contribution 2: Full-Body Tracking System
+
+## 🎯 The Goal
+
+Build a system that tracks the **entire human body in VR**.
+
+This is critical for:
+- Sports training 🏋️
+- Motion analysis 📈
+
+---
+
+## ⚔️ Challenge 1: The Tracking Landscape is a Mess
+
+### ❓ Problem
+
+There is no single standard solution.
+
+Options included:
+- IMU trackers
+- Lighthouse systems
+- Camera tracking
+- EMF systems
+
+---
+
+### 💡 Solution
+
+I performed a full breakdown of:
+
+- Accuracy
+- Latency
+- Cost
+- Reliability
+
+---
+
+### ✅ Result
+
+Identified **IMU-based tracking** as best balance.
+
+---
+
+## ⚔️ Challenge 2: Xsens Was a Dead End
+
+### ❓ Problem
+
+Trackers drifted over time.
+
+Even when stationary:
+> They still moved.
+
+---
+
+### 🧩 Why it was Hard
+
+- Not a coding bug
+- Fundamental hardware limitation
+
+---
+
+### 💡 Solution
+
+- Contacted Xsens support
+- Validated behavior experimentally
+
+---
+
+### 🚨 Realization
+
+> This solution will NEVER work for our use case.
+
+---
+
+### ✅ Result
+
+Pivoted away early → saved huge time.
+
+---
+
+## ⚔️ Challenge 3: Bluetooth is a Nightmare
+
+### ❓ Problem
+
+Needed to communicate with trackers.
+
+---
+
+### 🧩 Why it was Hard
+
+Bluetooth LE structure:
+
+Device → Service → Characteristic
+
+- Poor documentation
+- Hard to debug
+- Platform-specific behavior
+
+---
+
+### 💡 Solution
+
+- Learned BLE architecture deeply
+- Built Android test apps
+- Scanned and connected to devices
+
+---
+
+### ✅ Result
+
+Successfully detected and connected trackers.
+
+---
+
+## ⚔️ Challenge 4: “Connected” ≠ “Working”
+
+### ❓ Problem
+
+Could connect to trackers…
+
+…but received **no usable data**.
+
+---
+
+### 💡 Solution
+
+- Studied BLE specs
+- Identified correct characteristics
+- Learned how data is structured
+
+---
+
+### ✅ Result
+
+Understood full communication pipeline.
+
+---
+
+## ⚔️ Challenge 5: Choosing the Right Hardware
+
+### ❓ Problem
+
+Xsens unusable → needed alternative
+
+---
+
+### 💡 Solution
+
+Researched and proposed:
+
+**HaritoraX**
+
+Why:
+- 💸 Cheaper
+- 🧠 Provides full skeleton
+- 🔌 Outputs via OSC
+
+---
+
+### ✅ Result
+
+Company adopted new solution.
+
+---
+
+## ⚔️ Challenge 6: OSC Pipeline Not Working
+
+### ❓ Problem
+
+No data received in Unity.
+
+Silent failure.
+
+---
+
+### 🧩 Why it was Hard
+
+- No error messages
+- Platform restrictions (Android)
+
+---
+
+### 💡 Solution
+
+After deep debugging:
+
+- Found missing Android permissions
+- Modified `AndroidManifest.xml`
+
+---
+
+### ✅ Result
+
+OSC communication works 🎉
+
+---
+
+## 💥 Final Impact
+
+Before:
+- No working tracking solution
+
+After:
+- Clear pipeline:
+  - Trackers → VR Manager → OSC → Unity
+
+---
+
+# 👤 Zhangir After the Project
+
+## 🚀 Growth
+
+Before:
+- Strong programmer
+
+After:
+- Real-world problem solver
+
+---
+
+## 🧠 What Changed
+
+- I now think in **systems, not features**
+- I question whether a problem is worth solving
+- I make decisions based on **constraints, not assumptions**
+
+---
+
+## 🔑 Key Takeaways
+
+- The hardest problems are **uncertain ones**
+- Engineering = **decision-making under ambiguity**
+- The best solutions often come from **changing direction**
+
+---
+
+## 🏁 Final Reflection
+
+This internship proved that I can:
+
+- Build real production tools 🛠️  
+- Navigate unknown technical domains 🌍  
+- Make impactful engineering decisions 🎯  
+
+Most importantly:
+
+> I can turn chaos into working systems.

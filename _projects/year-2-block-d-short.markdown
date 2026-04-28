@@ -45,6 +45,7 @@ Zentera is a third-person puzzle-platformer where players use an extendable tong
 
 ![image1](../../assets/images/Y2D/particles.gif)
 
+
 **What it Does:**
 Developed a versatile particle system using EnTT ECS and integrated it with Angelscript for artists and designers to use flexibly in-engine.
 

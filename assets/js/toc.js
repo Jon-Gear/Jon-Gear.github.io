@@ -3,7 +3,7 @@
   const content = document.getElementById("content");
   if (!toc || !content) return;
 
-  const headings = content.querySelectorAll("h2, h3");
+  const headings = content.querySelectorAll("h1, h2");
   if (!headings.length) return;
 
   const ul = document.createElement("ul");
