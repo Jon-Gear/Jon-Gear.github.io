@@ -18,8 +18,13 @@ duration: "9 Months (Apr 2026 - Nov 2026)"
 
 # 💼 Internship at Flashgroup XR
 
-Write a clear, human-readable project title. Avoid internal codenames unless explained.
+[Flashgroup XR](https://flashgroupxr.com/) develops immersive XR training systems for emergency services, including firefighters, police, security personnel and first-aid responders. Its portable, plug-and-play solutions combine multiplayer VR simulations, realistic training scenarios and replicas of professional equipment, allowing instructors to conduct and review practical emergency-response training almost anywhere.
 
+I worked at Flashgroup XR as a Programming Intern / Unity Tools Developer. 
+
+My main responsibility was **researching and developing internal tools that improved the team’s production workflow.**
+
+My primary project was a custom Unity collider editor that helped making colliders in Unity for a given game object.
 
 # 👤 Zhangir Before the Project
 
@@ -37,39 +42,291 @@ This section should establish a **baseline** so the reader can understand your g
 
 ---
 
-## 📋 EXAMPLE CONTRIBUTION 1
+## 🛠️📦 The Collider Editor Tool
 
 ![image1](../../assets/images/cool-demo.gif)
 
+
+
 Clearly highlight ownership:
 
-- **System / Feature:** What you built and why it mattered  
-- **Technical Decision:** What you chose and why  
-- **Impact:** What changed because of your work (performance, usability, scalability, etc.)  
+**System / Feature:** 
+What you built and why it mattered  
 
+**Technical Decision:** 
+What you chose and why  
+
+**Impact:** 
+What changed because of your work (performance, usability, scalability, etc.)  
 
 ### 🎯 What was the Goal?
 
-Describe the **initial objective clearly**:
+**Who Is This For?** Flashgroup’s 3D artists and programmers.
 
-- What problem were you trying to solve?
-- Who was this for (user, team, system)?
-- What constraints existed (time, tech, team, performance, etc.)?
+**What Is The Problem?** Before, Flashgroup’s artists and programmers had to create colliders manually. They would often had to either leave Unity and use Blender (which disrupted workflow) or work with Unity’s limited native collider-editing tools (which was tedious to use). 
 
-Make it clear **what success looked like**.
+**What Was My Goal?** Make creating colliders as easy as possible so that they were accurate enough for interaction and efficient enough for large VR training environments.
 
-
-### Challenge 1: [PROBLEM NAME]
+### Challenge 1: Creating a "Automatic Collider Generator"
 
 #### ❓ What was the Problem?
 
-Explain the issue in detail:
+My given tool objective is formulated as follows:
 
-- What exactly was broken, missing, or inefficient?
-- When/where did it occur?
-- How did it affect the system or user?
+> **"A tool that can a create a compound collider structure, multiple primitive colliders (box, sphere,...) for a specific mesh (collider) to improve performance."**
 
-Avoid being vague — this should feel concrete and real.
+My goal is to create an automatic collider generator. 
+
+#### 🧩 Why Was it Hard? What Struggles Did I Face?
+
+Explain why this problem was **non-trivial**:
+
+- Technical unknowns?
+- Poor documentation?
+- Complex interactions between systems?
+- Bugs that were hard to reproduce?
+- Design ambiguity?
+
+Show that the difficulty was **real and meaningful**, not artificial.
+
+
+#### 💡 Solution. How Did I Approach the Problem?
+
+This is the **main section**.
+
+Explain your full thinking and execution process:
+
+- How you broke down the problem
+- What ideas you tried (including failed ones if useful)
+- Key insights that led to the solution
+- Step-by-step approach to implementation
+- Why your solution works
+
+Treat this as:
+> “This is where I show how I think and build as an engineer.”
+
+You should:
+- Include design decisions
+- Include architecture explanation
+- Include code where relevant
+- Explain *why*, not just *what*
+
+Show your engineering judgment (Engineering Decisions & Trade-offs):
+
+- Why did you choose one approach over another?
+- What alternatives did you consider?
+- What were the trade-offs?
+
+Be explicit:
+
+- Performance vs simplicity
+- Flexibility vs complexity
+- Speed of development vs scalability
+
+
+Include **only meaningful code**, not random snippets.
+
+```cpp
+// Example: Why this structure?
+void Update(float deltaTime)
+{
+    // Using a fixed timestep accumulator to ensure deterministic simulation
+    accumulator += deltaTime;
+
+    while (accumulator >= fixedStep)
+    {
+        Simulate(fixedStep); // Keeps physics stable
+        accumulator -= fixedStep;
+    }
+}
+```
+
+**Explanation:**
+
+* Why did you structure it this way?
+* What problem does this solve?
+* What would happen with a naive approach?
+* What alternatives exist?
+
+Code should support your thinking — not replace it.
+
+#### ✅ Problem Solved
+
+![image1](../../assets/images/problem-solved-demo.gif)
+
+Show the **result visually or descriptively**:
+
+* What changed after your solution?
+* How do we know it works?
+* What improved?
+
+Make the success tangible.
+
+#### 📉 Cost / Limitations / Tradeoffs
+
+Be honest and critical:
+
+* What did this solution sacrifice?
+* What are its limitations?
+* What wouldn’t scale?
+* What technical debt was introduced?
+
+Examples:
+
+* Lacks async support
+* Tight coupling between systems
+* Performance not optimal in edge cases
+
+This builds **credibility**.
+
+### Challenge 2: Creating a "Collider Editor"
+
+#### ❓ What was the Problem?
+
+When I started the project, my initial tool objective was formulated as follows:
+
+> **"A tool that can a create a compound collider structure, multiple primitive colliders (box, sphere,...) for a specific mesh (collider) to improve performance."**
+
+At the time, I was told to create an automatic collider generator. But it turns out that the problem that I was trying to solve is much different from what I started.
+
+Here were my observations:
+- When I tested out the tool with artists, I made an important discovery: in order to make a decent collision for a given object, they take up 1-2 minutes.
+- When I asked the artist what was the longest part of making a collider, they replied "opening up Blender". 
+- When I asked an artist to show me how they would make a collider for a given model, I noticed how tedious to use the native Unity collision editor is. 
+
+Based on all of this, in order for CPDCD to effectively "outcompete" the human, the algorithm must nail the generation for EVERY OBJECT pretty much instantly and on the first try. 
+
+In this case, manual human work is actually better in terms of time to make and performance. If you can't beat manual human work, then make manual work as easy as possible.
+
+This all culminated when I asked the programmer directly and found out that they need a proper collider editor.
+
+#### 🧩 Why Was it Hard? What Struggles Did I Face?
+
+Explain why this problem was **non-trivial**:
+
+- Technical unknowns?
+- Poor documentation?
+- Complex interactions between systems?
+- Bugs that were hard to reproduce?
+- Design ambiguity?
+
+Show that the difficulty was **real and meaningful**, not artificial.
+
+
+#### 💡 Solution. How Did I Approach the Problem?
+
+This is the **main section**.
+
+Explain your full thinking and execution process:
+
+- How you broke down the problem
+- What ideas you tried (including failed ones if useful)
+- Key insights that led to the solution
+- Step-by-step approach to implementation
+- Why your solution works
+
+Treat this as:
+> “This is where I show how I think and build as an engineer.”
+
+You should:
+- Include design decisions
+- Include architecture explanation
+- Include code where relevant
+- Explain *why*, not just *what*
+
+Show your engineering judgment (Engineering Decisions & Trade-offs):
+
+- Why did you choose one approach over another?
+- What alternatives did you consider?
+- What were the trade-offs?
+
+Be explicit:
+
+- Performance vs simplicity
+- Flexibility vs complexity
+- Speed of development vs scalability
+
+
+Include **only meaningful code**, not random snippets.
+
+```cpp
+// Example: Why this structure?
+void Update(float deltaTime)
+{
+    // Using a fixed timestep accumulator to ensure deterministic simulation
+    accumulator += deltaTime;
+
+    while (accumulator >= fixedStep)
+    {
+        Simulate(fixedStep); // Keeps physics stable
+        accumulator -= fixedStep;
+    }
+}
+```
+
+**Explanation:**
+
+* Why did you structure it this way?
+* What problem does this solve?
+* What would happen with a naive approach?
+* What alternatives exist?
+
+Code should support your thinking — not replace it.
+
+#### ✅ Problem Solved
+
+![image1](../../assets/images/problem-solved-demo.gif)
+
+Show the **result visually or descriptively**:
+
+* What changed after your solution?
+* How do we know it works?
+* What improved?
+
+Make the success tangible.
+
+#### 📉 Cost / Limitations / Tradeoffs
+
+Be honest and critical:
+
+* What did this solution sacrifice?
+* What are its limitations?
+* What wouldn’t scale?
+* What technical debt was introduced?
+
+Examples:
+
+* Lacks async support
+* Tight coupling between systems
+* Performance not optimal in edge cases
+
+This builds **credibility**.
+
+
+
+
+### Challenge 3: Refining the "Collider Editor"
+
+#### ❓ What was the Problem?
+
+The artists and programmers in their feedback have noted a couple of things to add and refine:
+- Mask/Hide vertices
+- Confirm collider button
+- Logical progression of things (select an object first, enter vertex selection mode, select vertices, select solution, create collider)
+- Vertex selection mode: this is to signify to the user that Scene View tools (e.g. transform, box bounds) are unavailable to use because they are currently selecting vertices (so that we don't interfere with one another)
+- CTRL + Z for vertices and other things in the editor
+- Meshes are saved as an asset, not into a scene or anything.
+- Shortcuts for selecting and creating colliders
+- The mesh is drawn as a wireframe now, similar to Blender
+- Hover tooltips
+- Collider preview must have an option to be filled or be an outline
+- Collider previews must have an option to be color-coded for performance (green = fast, red = slow)
+- You can see a performance view of already generated colliders
+- You can see a list of colliders we already generated
+- You can deselect vertices on click
+- Confirmation steps. Ask an "are you sure?" when you create a collider to make the user double-check their work.
+- Added better descriptors for min-max, distance, best fit;
+- Update the UI.
 
 
 #### 🧩 Why Was it Hard? What Struggles Did I Face?
@@ -173,6 +430,126 @@ Examples:
 * Performance not optimal in edge cases
 
 This builds **credibility**.
+
+
+
+
+### Challenge 4: Simplifying the "Collider Editor"
+
+#### ❓ What was the Problem?
+
+My product manager noted a couple points to look improve for the collider editor.
+
+The collider creation workflow is messy and difficult to use.
+
+When selecting a lot of vertices, the framerate fell down.
+
+
+#### 🧩 Why Was it Hard? What Struggles Did I Face?
+
+Explain why this problem was **non-trivial**:
+
+- Technical unknowns?
+- Poor documentation?
+- Complex interactions between systems?
+- Bugs that were hard to reproduce?
+- Design ambiguity?
+
+Show that the difficulty was **real and meaningful**, not artificial.
+
+
+#### 💡 Solution. How Did I Approach the Problem?
+
+This is the **main section**.
+
+Explain your full thinking and execution process:
+
+- How you broke down the problem
+- What ideas you tried (including failed ones if useful)
+- Key insights that led to the solution
+- Step-by-step approach to implementation
+- Why your solution works
+
+Treat this as:
+> “This is where I show how I think and build as an engineer.”
+
+You should:
+- Include design decisions
+- Include architecture explanation
+- Include code where relevant
+- Explain *why*, not just *what*
+
+Show your engineering judgment (Engineering Decisions & Trade-offs):
+
+- Why did you choose one approach over another?
+- What alternatives did you consider?
+- What were the trade-offs?
+
+Be explicit:
+
+- Performance vs simplicity
+- Flexibility vs complexity
+- Speed of development vs scalability
+
+
+Include **only meaningful code**, not random snippets.
+
+```cpp
+// Example: Why this structure?
+void Update(float deltaTime)
+{
+    // Using a fixed timestep accumulator to ensure deterministic simulation
+    accumulator += deltaTime;
+
+    while (accumulator >= fixedStep)
+    {
+        Simulate(fixedStep); // Keeps physics stable
+        accumulator -= fixedStep;
+    }
+}
+```
+
+**Explanation:**
+
+* Why did you structure it this way?
+* What problem does this solve?
+* What would happen with a naive approach?
+* What alternatives exist?
+
+Code should support your thinking — not replace it.
+
+#### ✅ Problem Solved
+
+![image1](../../assets/images/problem-solved-demo.gif)
+
+Show the **result visually or descriptively**:
+
+* What changed after your solution?
+* How do we know it works?
+* What improved?
+
+Make the success tangible.
+
+#### 📉 Cost / Limitations / Tradeoffs
+
+Be honest and critical:
+
+* What did this solution sacrifice?
+* What are its limitations?
+* What wouldn’t scale?
+* What technical debt was introduced?
+
+Examples:
+
+* Lacks async support
+* Tight coupling between systems
+* Performance not optimal in edge cases
+
+This builds **credibility**.
+
+
+
+
 
 ### 💥 Impact of Contribution
 
