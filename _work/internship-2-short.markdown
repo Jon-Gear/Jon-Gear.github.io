@@ -9,7 +9,7 @@ version: short
 short_url: /work/internship-2-short
 long_url: /work/internship-2-long
 categories: [work]
-image: /assets/images/internship-2/main.png
+image: /assets/images/internship-2/main_loop.gif
 contributions: "Collider Editor | Primitive Collider Generator"
 tools: "Unity, C#, Python, C++"
 platforms: "Virtual Reality (Meta Quest) | Windows"
@@ -44,28 +44,83 @@ This section should establish a **baseline** so the reader can understand your g
 
 ## 🛠️📦 The Collider Editor Tool
 
-![image1](../../assets/images/cool-demo.gif)
+![image1](../../assets/images/internship-2/main_loop.gif)
+
+
+**The Collider Editor** is a custom Unity editor tool that lets artists and developers **create accurate physics colliders directly from a mesh’s vertices**. Users can select parts of a model in the Scene View, preview the collider shape, and generate colliders such as spheres, capsules, boxes, cylinders, convex hulls, or convex-decomposition collider sets.
+
+My goal was to **help create colliders as easy as possible**.
+
+This tool was made for **Flashgroup’s 3D artists and programmers**. 
+
+Before, an artist/programmer had to either **leave Unity to edit meshes in Blender** or rely on **Unity’s limited native collider tools**, which is **slow, repetitive, and error-prone**.
+
+Now, they can **create, preview, and generate colliders directly inside Unity** using the mesh’s vertices, making the process **faster, more accurate, and easier to manage**.
 
 
 
-Clearly highlight ownership:
 
-**System / Feature:** 
-What you built and why it mattered  
 
-**Technical Decision:** 
-What you chose and why  
+```
 
-**Impact:** 
-What changed because of your work (performance, usability, scalability, etc.)  
+Features related to UI:
 
-### 🎯 What was the Goal?
+= Simple and Clear User Interface - Adds a Unity editor window for creating and editing colliders from selected mesh vertices.
 
-**Who Is This For?** Flashgroup’s 3D artists and programmers.
+* **Generated Colliders Panel** — Lists colliders found on the selected object and its children.
 
-**What Is The Problem?** Before, Flashgroup’s artists and programmers had to create colliders manually. They would often had to either leave Unity and use Blender (which disrupted workflow) or work with Unity’s limited native collider-editing tools (which was tedious to use). 
 
-**What Was My Goal?** Make creating colliders as easy as possible so that they were accurate enough for interaction and efficient enough for large VR training environments.
+Features related to preview:
+= * **Editable Mesh Overlay** — Draws mesh wireframes, selected faces, selected edges, and vertex points in the Scene view.
+= **Live Collider Preview** — Shows a Scene view preview of the selected collider type before creation.
+= **Wireframe Preview Mode** — Allows primitive previews and existing collider previews to be drawn as outlines only.
+= **Performance-Colored Previews** — Colors collider previews based on expected physics cost, such as sphere being fastest and mesh collider being slowest.
+= **Existing Collider Performance View** — Draws existing colliders in the Scene view with performance labels and colors.
+
+
+
+
+Features related to selection:
+= Select Vertices From Scene - select mesh vertices directly in the Scene view by clicking or dragging a selection rectangle. You can add/remove vertices from selection, select all vertices 
+= Connected Hull Selection — Double-clicking a vertex selects the connected mesh island or hull around that vertex.
+= Through Select / Visible-Only Selection — Allows selection either through the mesh to back-side vertices or only to vertices visible from the Scene camera.
+
+= Vertex Masking — Lets the user hide selected vertices so they are not drawn or selectable.
+= Vertex Isolation — Hides every vertex except the current selection.
+
+
+
+
+
+Colliders
+= Boxes, Spheres, Capsules, Cylinders
+= Mesh from selecte vertices - Creates a convex MeshCollider using a quick-hull mesh built from the selected vertices.
+= Convex decomposition - Uses CoACD to generate multiple convex `MeshCollider` hulls from a selected region, useful for preserving concave shapes better than a single convex hull.
+
+
+
+Other features:
+* **Undo Support** — Integrates with Unity Undo for selection changes, masking, collider creation, and collider deletion.
+
+* **Generated Mesh Asset Cleanup** — Deletes generated mesh assets when they are no longer used by any generated collider.
+
+* **Persistent Generated Mesh Assets** — Saves generated MeshCollider meshes as Unity assets in organized generated-mesh folders.
+
+* **Keyboard Shortcuts** — Supports shortcuts for undo, select all, hide, isolate, create collider, stop editing, and number-key collider selection/creation.
+
+
+* **Background Collider Generation** — Runs heavy convex decomposition work on a background task and reports progress through Unity’s progress UI.
+
+
+
+
+
+```
+
+
+
+
+
 
 ### Challenge 1: Creating a "Automatic Collider Generator"
 
