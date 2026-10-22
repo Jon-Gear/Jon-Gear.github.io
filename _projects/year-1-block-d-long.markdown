@@ -18,83 +18,13 @@ platforms: "Windows"
 duration: "8 Weeks (May 2024 - Jun 2024)"
 ---
 
-## 🔥 IgKnighted – A Stylized Local Multiplayer Arena Shooter
+# 🔥 IgKnighted – A Stylized Local Multiplayer Arena Shooter
 
 [Click here to visit our game page!](https://buas.itch.io/igknighted)
 
-IgKnighted is a fast-paced, couch co-op arena shooter built in Unreal Engine 5 using Blueprints. Designed for local multiplayer mayhem, players face off against waves of enemies while collecting power-ups, dodging enemy fire, and racing for the highest score. Inspired by classic arcade energy and modern stylized visuals, the game features dynamic combat, painterly post-processing, and a responsive control scheme. Developed collaboratively by a multidisciplinary team, IgKnighted blends tight gameplay mechanics with polished visuals and smart system design—all brought together through agile development and hands-on iteration.
+IgKnighted is a fast-paced, couch co-op arena shooter built in Unreal Engine 5 using Blueprints and C++. 
 
----
-
-## 🔨 My Contributions
-
----
-
-## How to read this page
-
-This is not a feature list. It is a **systems case study**: every section follows the same shape —
-
-> **The requirement → the constraint that made it hard → the architecture I chose → the code that implements it → the edge cases that bit me → the trade-off I accepted.**
-
-If you are reviewing this for a gameplay programming role, the fastest path is:
-
-| If you want to see… | Go to |
-|---|---|
-| I understand Unreal's object lifetimes and can place state correctly | [§02 Gameplay Framework](#02-gameplay-framework--core-architecture) |
-| I can build local multiplayer and route input per player | [§03 Local Multiplayer](#31-local-multiplayer-architecture) |
-| I can write damage/state machines that cannot double-fire | [§03.4 Dash](#34-dash--invulnerability) · [§04.2 Damage](#42-projectile--damage-system) |
-| I can build enemy AI that is readable and tunable | [§04 Enemy AI](#04-combat-systems--enemy-ai) |
-| I know the modern ability stack (GAS, tags, effects) | [§05.3 GAS](#53-gameplay-ability-system--reference-design) |
-| I can own a progression system end to end | [§06 Zone Progression](#06-level-design-progression--difficulty-systems) |
-| I debug, profile and make trade-offs like a professional | [§08 Engineering Practices](#08-engineering-practices--technical-decisions) |
-
-**Role alignment.** The target role for this project is a *Senior Gameplay Programmer* (Unreal). The systems below map directly onto that job description: **player mechanics and player abilities** (§03, §05), **player progression** (§05.4, §06), **game flow systems** (§02, §06), **world systems and activities** (§06), **Enhanced Input / Animation / GAS / EQS** (§03.2, §07.1, §05.3, §04.5), **robust and maintainable systems** (§08.1, §08.5), and **diagnosing gameplay, memory and performance issues** (§08.2, §08.4).
-
----
-
-## 01. Project Overview
-
-### 1.1 About IgKnighted
-
-![IgKnighted — flooded temple arena](../../assets/images/Y1D/main.jpg)
-
-IgKnighted is a **stylized top-down twin-stick / bullet-hell arena shooter** built in Unreal Engine 5 and released for Windows. The premise is deliberately simple so the systems can be the interesting part: a forgotten, flooded temple; knights forged from fire; and the water-things that live in it.
-
-| | |
-|---|---|
-| **Genre** | Top-down twin-stick arena shooter / bullet hell |
-| **Engine** | Unreal Engine 5 (UE5.4) |
-| **Players** | 1–2 local, shared-screen, keyboard + gamepad |
-| **Duration** | 8 weeks (May – June 2024) |
-| **Team** | 4 programmers · 3 designers · 5 artists |
-| **Delivery** | Public downloadable Windows build on [itch.io](https://buas.itch.io/igknighted) |
-
-**The core loop.**
-
-```
-   ┌────────────────────────────────────────────────────────────────────┐
-   │  MENU          Move · Aim · Shoot · Dash · Collect · Survive        │
-   │    ↓           ↑                                                    │
-   │  ZONE 1   ─────┘   Clear the encounter → unlock the barrier        │
-   │    ↓                                                                 │
-   │  ZONE 2   ─────┘   Clear the encounter → unlock the barrier        │
-   │    ↓                                                                 │
-   │  ZONE 3   ─────┘   Clear the encounter → VICTORY                     │
-   └────────────────────────────────────────────────────────────────────┘
-
-   Shared lives: 5  ▓▓▓▓▓▓▓▓▓▓  (one pool for both players)
-   On 0 lives   → GAME OVER, even if a teammate is still standing
-```
-
-**The three rules that define the whole game.** Every combat, UI and AI system in this project ultimately answers to these:
-
-1. **Water damage is lethal in one hit.** There is no health bar to chip down. If it touches you, you die.
-2. **The dash is your only defence.** A dash grants temporary invulnerability; it is the intended answer to the Water Mollusk's beam and to any projectile you cannot dodge.
-3. **Lives are a shared pool of five.** Your teammate's death spends *your* stock. The run ends at zero, no matter who is still alive.
-
-That third rule is the one that shapes the entire architecture, and it is the reason §02.3 exists.
-
-### 1.2 My Role & Contributions
+--- 
 
 I was one of **four programmers** on a team of twelve. I owned the systems that everything else in the game depended on — the ones that, if they broke, the game stopped being playable.
 
@@ -130,7 +60,11 @@ Six systems that a gameplay programmer can be measured on, and how this project 
 
 ---
 
-## 02. Gameplay Framework & Core Architecture
+# 🔨 My Contributions
+
+---
+
+## 01. Gameplay Framework & Core Architecture
 
 > **The single most important thing I got right in this project was placing state in the right place.** Almost every ugly bug we had in the last three weeks of production traced back to a piece of state living in the wrong object.
 
@@ -748,7 +682,7 @@ void AIgKnightedPlayerController::ServerRespawnPlayer_Implementation(AController
 
 ---
 
-## 03. Player Systems & Local Multiplayer
+## 02. Player Systems & Local Multiplayer
 
 > **Local multiplayer is where the Gameplay Framework stops being theory.** Two controllers, one process, one screen. Everything you learned about `LocalPlayer`, `PlayerController` and `Possess` becomes load-bearing.
 
@@ -1616,7 +1550,7 @@ void AIgKnightedPlayerCharacter::OnPlayerLethalHit(const FIgDamageContext& Conte
 
 ---
 
-## 04. Combat Systems & Enemy AI
+## 03. Combat Systems & Enemy AI
 
 > **Combat is a data problem, not a Blueprint problem.** The moment firing a projectile needs to work for a player, a Scorpion and a tutorial dummy, the "just call these five nodes" approach stops scaling.
 
@@ -2527,7 +2461,7 @@ The AI decides *what* to do (fire). The Animation Blueprint decides *how it look
 
 ---
 
-## 05. Gameplay Abilities, Power-Ups & Scoring
+## 04. Gameplay Abilities, Power-Ups & Scoring
 
 > **Four power-ups is not a reason to adopt the Gameplay Ability System.** But it *is* a reason to design the ability layer so that it could become one without a rewrite.
 
@@ -2979,7 +2913,7 @@ void UIgKnightedHUDWidget::BindToPlayerState(AIgKnightedPlayerState* NewState)
 
 ---
 
-## 06. Level Design, Progression & Difficulty Systems
+## 05. Level Design, Progression & Difficulty Systems
 
 > **One map. Three zones. No loading screens between them.** The whole progression system is a state machine on a manager actor, and the single hardest bug in the project lived right here.
 
@@ -3580,7 +3514,7 @@ void UIgKnightedDifficultyDirector::EvaluateAfterEncounter(float EncounterDurati
 
 ---
 
-## 07. Animation, UI & Gameplay Feedback
+## 06. Animation, UI & Gameplay Feedback
 
 > **Gameplay decides *what* happened. Presentation decides *how it looks*.** Every system in this section is a consumer of gameplay events — none of them is allowed to decide anything.
 
@@ -3913,7 +3847,7 @@ This is a small but important API design decision: **the C++ surface should be s
 
 ---
 
-## 08. Engineering Practices & Technical Decisions
+## 07. Engineering Practices & Technical Decisions
 
 > **The part of the job that is not writing gameplay code.** How the code is structured, how bugs are found, what is tested, what it costs, and why it is built that way.
 
@@ -4323,7 +4257,7 @@ These are the decisions I actually agonised over, with the alternatives and the 
 
 ---
 
-## 09. Results, Retrospective & Lessons Learned
+# 🎯 Results, Retrospective & Lessons Learned
 
 ### 9.1 Final Product
 
@@ -4463,34 +4397,4 @@ The `GameInstance` is the right place for configuration, but some things are gen
 **What this project says about how I work:** I care about the space between the mechanic and the feedback — the moment where a rule becomes something the player can feel and understand. The dash's i-frames are not just a gameplay flag; the graze spark is what teaches the player that dashing through a water beam works. I care about state being in the right place, because that is what makes a system survive being changed by someone else. And I care about the code being readable enough that the next person — including future me — can change it without first having to understand it.
 
 ---
-
-## 🎯 Role Alignment Summary
-
-If you are here for the job description rather than the game, this is the short version.
-
-| Epic's requirement | Where I demonstrated it |
-|---|---|
-| Player mechanics, player abilities | §03.3–03.5 (dash, i-frames, death/respawn), §05 (power-ups) |
-| Player progression | §05.4 (score, multiplier), §06 (three zones, encounters, victory) |
-| Game flow systems | §02.2–02.3 (front-end → run → match → result), §06.3 |
-| World systems and activities | §06.1–06.2 (persistent map, spawners, encounter management) |
-| Enhanced Input | §03.2 |
-| Gameplay Ability System | §05.3 (component-based implementation + a full GAS mapping) |
-| EQS | §04.5 (the Scorpion's firing-position query) |
-| Animation | §07.1 (Animation Blueprints, notifies, state-driven locomotion) |
-| Exceptional C++ and gameplay architecture | §08.1 (the C++/Blueprint boundary), §08.5 (seven ADRs) |
-| Robust, understandable, maintainable code | §08.1, §08.5, the component decomposition throughout |
-| Diagnose gameplay, memory and performance issues | §08.2 (five real debugging stories), §08.4 |
-| Balance trade-offs for the user experience | §08.5, and the difficulty/dynamic-difficulty bounds in §06.5 |
-| Distill feature requests into actionable work items | §06.4 (difficulty as data, not branches), §04.1 (weapon data assets) |
-| Cross-discipline collaboration | §01.2 (what I owned and what I did not), §08.1 (the designer-facing API), §07.1 (the animator-facing contract) |
-
-**Tools:** Unreal Engine 5 · C++ (UE reflection, Gameplay Framework, Enhanced Input, GAS, Gameplay Tags, Behaviour Trees, Blackboards, EQS) · Blueprints · UMG · Animation Blueprints · Niagara · Unreal Insights / stat commands.
-
-**Links:** [Play IgKnighted](https://buas.itch.io/igknighted) · [Trailer](https://www.youtube.com/@Jon-Gear) · [GitHub](https://github.com/jon-gear) · [LinkedIn](https://linkedin.com/in/jon-gear)
-
----
-
-*This case study documents IgKnighted, an eight-week Unreal Engine 5 student project, and the gameplay systems I owned within it. Diagrams and code are my own; game footage and screenshots are from the shipped build.*
-
 
