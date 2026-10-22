@@ -1,11 +1,12 @@
 ---
 layout: project
 title: "IgKnighted: Local Multiplayer Arena Shooter in Unreal Engine"
-role: "Programmer"
-version: none
+role: "Gameplay Programmer"
+version: short
+short_url: /projects/year-1-block-d
+long_url: /projects/year-1-block-d-long
 date: 2024-06-28
 categories: [featured_projects]
-version: none
 image: /assets/images/Y1D/main.jpg
 description: "Dive into the heart of a forgotten, flooded temple as powerful knights forged from fire. In this twinstick shooter bullet hell, you will fight off waves of enemies in order to progress through the temple and become the most powerful fighter of all! Work together or embark alone."
 contributions: "Input Mapping | Local Multiplayer | Enemy Attacks (Shooting & Aiming) | Player Damage | Collectables | Power-Ups | In-Engine Animations"
