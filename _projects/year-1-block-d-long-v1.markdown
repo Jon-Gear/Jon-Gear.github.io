@@ -4,8 +4,8 @@ title: "IgKnighted — Unreal Engine 5 Gameplay Programming & Systems Architectu
 role: "Gameplay Programmer"
 
 version: long
-short_url: /projects/year-1-block-d
-long_url: /projects/year-1-block-d-long
+short_url: /projects/year-1-block-d-short-v1
+long_url: /projects/year-1-block-d-long-v1
 
 date: 2024-06-28
 categories: [featured_projects]
@@ -21,6 +21,8 @@ duration: "8 Weeks (May 2024 - Jun 2024)"
 # 🔥 IgKnighted – A Stylized Local Multiplayer Arena Shooter
 
 [Click here to visit our game page!](https://buas.itch.io/igknighted)
+
+*This is an archived version. The current write-up is at [IgKnighted — feature-by-feature case study](/projects/year-1-block-d/).*
 
 IgKnighted is a fast-paced, couch co-op arena shooter built in Unreal Engine 5 using Blueprints and C++. 
 
