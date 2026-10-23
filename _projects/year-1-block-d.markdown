@@ -201,6 +201,9 @@ The `GameMode` reads it **once**, at `BeginPlay`, and everything downstream read
     }
 ```
 
+![F1](../../assets/images/Y1D/blueprints/F1.png)
+
+
 That "once" is deliberate. If the `GameMode` re-read the settings every time it needed the difficulty, the run could change halfway through because a menu widget wrote a new value. Reading once turns the configuration into an immutable input to the match.
 
 **The rules — `AGameModeBase`.** `FinishMatch` became the only way to end a match, and its first action is to refuse to run twice:
@@ -258,9 +261,10 @@ void AIgKnightedGameMode::HandleFinalZoneCleared()
 
 The *order* is enforced upstream: the zone manager defers its own completion check by one tick, so the frame's damage has been fully processed before victory is even proposed (this is §05, Challenge 1). The `GameMode` only has to enforce "first ending wins".
 
-> **📸 Blueprint capture:** `BP_IgKnightedGameMode` — the `BeginPlay` flow: read run settings, initialise the GameState, bind `OnLethalDamage`. *(Replace this block with a blueprintue.com screenshot or embed.)*
+![Blueprint 1](../../assets/images/Y1D/blueprints/F2_1.png)
 
-![Blueprint 1](../../assets/images/Y1D/blueprint_1.png)
+![Blueprint 1](../../assets/images/Y1D/blueprints/F2_2.png)
+
 
 **The numbers — `AGameStateBase`.** The `GameState` remembers what the match is currently doing. It deliberately holds no pointers to Pawns or enemies, which is what makes it safe for the HUD and the zone systems to read:
 
@@ -674,7 +678,6 @@ void AIgKnightedPlayerCharacter::Tick(float DeltaSeconds)
 }
 ```
 
-> **📸 Blueprint capture:** `BP_IgKnightedPlayerCharacter` — the component list and the `WeaponPivot` hierarchy on the mesh. *(Replace this block with a blueprintue.com screenshot or embed.)*
 
 #### ✅ Problem Solved
 
@@ -769,6 +772,13 @@ void AIgKnightedPlayerState::AddMultiplier(float Delta)
 ```
 
 The multiplier clamps at the owner, and broadcasts only on a real change. That last detail is what stopped the HUD flashing when a kill awarded a multiplier that was already at the cap.
+
+![Blueprint 1](../../assets/images/Y1D/blueprints/F3_1.png)
+![Blueprint 1](../../assets/images/Y1D/blueprints/F3_2.png)
+![Blueprint 1](../../assets/images/Y1D/blueprints/F3_3.png)
+![Blueprint 1](../../assets/images/Y1D/blueprints/F3_4.png)
+
+
 
 #### ✅ Problem Solved
 
@@ -948,6 +958,7 @@ for (int32 ShotIndex = 0; ShotIndex < TotalShots; ++ShotIndex)
 ```
 
 The `bUseAnimationNotify` flag exists because one archetype (the Mollusk) has a wind-up in its animation that *must* match the shot. The weapon opts in; the timer is the default, not the rule.
+
 
 #### ✅ Problem Solved
 
@@ -1154,7 +1165,7 @@ void AIgKnightedPlayerCharacter::TryDash()
 
 The GameMode's `HandlePlayerEliminated` is the rule: it latches on the Pawn, spends one life, calls `StartDeathPresentation`, and schedules the respawn — or finishes the match.
 
-> **📸 Blueprint capture:** `ABP_IgKnightedPlayer` — the death state and the notify that calls `FinishDeath`. *(Replace this block with a blueprintue.com screenshot or embed.)*
+![Blueprint 1](../../assets/images/Y1D/blueprints/F5.png)
 
 #### ✅ Problem Solved
 
@@ -1661,7 +1672,9 @@ Three details carry the fix:
 - **The query is tagged `Ig.Player`, not cast to a class.** The melee code does not include `IgKnightedPlayerCharacter.h`.
 - **The notify is the clock.** One swing is one call, so the rate is the animation's rate, which is a number designers can tune without touching damage code.
 
-> **📸 Blueprint capture:** `ABP_Crawler` — the attack montage with the melee notify at the contact frame. *(Replace this block with a blueprintue.com screenshot or embed.)*
+![Blueprint 1](../../assets/images/Y1D/blueprints/F8_1.png)
+![Blueprint 1](../../assets/images/Y1D/blueprints/F8_2.png)
+
 
 #### ✅ Problem Solved
 
@@ -1745,6 +1758,8 @@ Selector
 
 `LastKnownLocation` still exists, and it is used for exactly one thing: chasing a player who has just broken line of sight. It is a memory, not an aim point.
 
+
+
 #### ✅ Problem Solved
 
 Scorpions hit a strafing player, because the shot is aimed at the player's current position from the muzzle. The shot and the visual agree. The split is explicit: blackboard = decisions and memory, live actor = aim.
@@ -1820,6 +1835,8 @@ void AIgKnightedEnemyCharacter::FireRadialBurst()
 ```
 
 The base yaw is computed from the Mollusk's centre, but every projectile spawns from the muzzle. At this scale the difference is centimetres; if the muzzle were far off-centre, the ring would need to be offset from the muzzle instead, and the first shot would no longer point exactly at the player.
+
+
 
 #### ✅ Problem Solved
 
