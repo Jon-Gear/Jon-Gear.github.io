@@ -3,13 +3,13 @@ layout: default
 ---
 
 # 👋 Hello! I'm Zhangir
-## Engine & Tools Programmer
+## Software Engineer | Engine & Tools | Gameplay | Unity | Unreal
 
-🎓 I'm a 3rd year student at Breda University of Applied Sciences in Creative Media and Game Technologies.
+🎓 I graduated from **Breda University of Applied Sciences** in Creative Media and Game Technologies.
 
-💼 I'm an Engine & Tools Programmer Intern at [Flashgroup XR](https://flashgroupxr.com/).
+💼 I'm currently seeking new job opportunities in the game industry!
 
-I am skilled in **Engine and Tools** programming with strong experience in making custom engines. I enjoy **creating tools and systems** which help other disciplines streamline game development. I’m passionate about **solving technical challenges** and continuously improving my skills.
+I am a skilled in **Gameplay** and **Engine & Tools** with strong experience in **C++, Unreal Engine, Unity, and custom engine development**. I enjoy designing gameplay mechanics, building robust systems, and creating tools that streamline development for programmers, designers, and artists. I’m passionate about solving complex technical challenges, optimizing performance, and developing maintainable gameplay systems, while continuously improving my skills and collaborating across disciplines.
 
 Proficient in C++. Additional experience with Unreal, Unity, and Godot.
 
@@ -22,7 +22,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/cpp.svg" alt="C++" />
     <div class="tooltip">
       C++<br>
-      8 years of experience in C++
+      9 years of experience with C++, specializing in Object-Oriented Programming, Memory Management, Data Structures, Algorithms, and Performance Optimization.
     </div>
   </div>
 
@@ -30,7 +30,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/vs.png" alt="Visual Studio" />
     <div class="tooltip">
       Visual Studio<br>
-      4 years of experience. Familiar with debugging, profiling, and project configuration tools
+      5 years of experience with Visual Studio, focusing on Advanced Debugging, Performance Profiling, Memory Diagnostics, CMake, and Build System Configuration.
     </div>
   </div>
 
@@ -38,6 +38,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/vscode.png" alt="Visual Studio Code" />
     <div class="tooltip">
       Visual Studio Code<br>
+      5 years of experience 5 years of experience with Visual Studio Code, focusing on C++/C# Development, Debugging, Git Integration, Task Automation, and Development Environment Configuration.
     </div>
   </div>
 
@@ -45,7 +46,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/github-light.svg" alt="Github" />
     <div class="tooltip">
       Github <br> 
-      3 years of experience. Experienced with its pipelines and used them in a team environment, including reviews, automated checks, and managing branches.
+      4 years of experience. Experienced with its pipelines and used them in a team environment, including reviews, automated checks, and managing branches.
     </div>
   </div>
 
@@ -53,7 +54,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/perforce.png" alt="Perforce" />
     <div class="tooltip">
       Perforce <br> 
-      2 years of experience with Perforce and P4V in a collaborative team environment, including active participation in code reviews.
+      3 years of experience with Perforce and P4V in a collaborative team environment, including active participation in code reviews.
     </div>
   </div>
 
@@ -61,7 +62,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/unreal.svg" alt="Unreal Engine" />
     <div class="tooltip">
       Unreal Engine <br>
-      Familiar working with Unreal Engine's Blueprints and in C++.
+      4 years of experience of Unreal Engine's Blueprints, C++, Gameplay Framework, Gameplay Ability System, Artificial Intelligence.
     </div>
   </div>
 
@@ -69,7 +70,7 @@ Hobbies: writing stories, calisthenics, designing in Photoshop.
     <img src="assets/images/icons/unity.svg" alt="Unreal Engine" />
     <div class="tooltip">
       Unity C# <br>
-      Familiar working with Unity and in C#
+      5 years of experience with Unity and C#, specializing in Custom Editor Tools, Gameplay Systems, Editor Scripting, AI, and Performance Optimization.
     </div>
   </div>
 </div>
