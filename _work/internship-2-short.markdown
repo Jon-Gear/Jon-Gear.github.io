@@ -4,7 +4,7 @@ title: "Internship at Flashgroup XR"
 company: "Flashgroup XR"
 role: "Engine & Tools Programmer"
 start_date: 2026-04-10
-end_date: 2026-10-10
+end_date: 2026-11-10
 version: short
 short_url: /work/internship-2-short
 long_url: /work/internship-2-long
