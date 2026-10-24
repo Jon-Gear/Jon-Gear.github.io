@@ -3,14 +3,14 @@ layout: project
 title: "IgKnighted: Local Multiplayer Arena Shooter in Unreal Engine"
 role: "Gameplay Programmer"
 version: short
-short_url: /projects/year-1-block-d-short-v1
-long_url: /projects/year-1-block-d-long-v1
+short_url: /projects/year-1-block-d-short
+long_url: /projects/year-1-block-d-long
 date: 2024-06-28
 categories: [archive]
 image: /assets/images/Y1D/main.jpg
-description: "Dive into the heart of a forgotten, flooded temple as powerful knights forged from fire. In this twinstick shooter bullet hell, you will fight off waves of enemies in order to progress through the temple and become the most powerful fighter of all! Work together or embark alone."
-contributions: "Input Mapping | Local Multiplayer | Enemy Attacks (Shooting & Aiming) | Player Damage | Collectables | Power-Ups | In-Engine Animations"
-tools: "Unreal Engine 5"
+description: "A local 1–2 player co-op bullet-hell arena shooter built in Unreal Engine 5, and a quick tour of the systems behind it: the gameplay framework, player and abilities, power-ups, three enemy archetypes, and the three-part level with dynamic difficulty."
+contributions: "Gameplay Framework & Core Architecture | Player: Input, Controller, Pawn, State & Abilities | Collectables & Power-Ups | Enemy AI: Crawler, Scorpion, Mollusk | Level, Spawning & Dynamic Difficulty"
+tools: "Unreal Engine 5, C++, Blueprints, Gameplay Framework, Enhanced Input, Gameplay Tags, Behavior Trees, UMG, Animation Blueprints, Niagara"
 team_size: "4 Programmers | 3 Designers | 5 Artists"
 platforms: "Windows"
 duration: "8 Weeks (May 2024 - Jun 2024)"
@@ -19,8 +19,6 @@ duration: "8 Weeks (May 2024 - Jun 2024)"
 ## 🔥 IgKnighted – A Stylized Local Multiplayer Arena Shooter
 
 [Click here to visit our game page!](https://buas.itch.io/igknighted)
-
-*This is an archived version. The current write-up is at [IgKnighted — feature-by-feature case study](/projects/year-1-block-d/).*
 
 IgKnighted is a fast-paced, couch co-op arena shooter built in Unreal Engine 5 using Blueprints. Designed for local multiplayer mayhem, players face off against waves of enemies while collecting power-ups, dodging enemy fire, and racing for the highest score. Inspired by classic arcade energy and modern stylized visuals, the game features dynamic combat, painterly post-processing, and a responsive control scheme. Developed collaboratively by a multidisciplinary team, IgKnighted blends tight gameplay mechanics with polished visuals and smart system design—all brought together through agile development and hands-on iteration.
 

@@ -3,14 +3,16 @@ layout: project
 title: "IgKnighted — Unreal Engine 5 Gameplay Programming Case Study"
 role: "Gameplay Programmer"
 
-version: none
+version: long
+short_url: /projects/year-1-block-d-short
+long_url: /projects/year-1-block-d-long
 
 date: 2024-06-28
 categories: [featured_projects]
-image: /assets/images/Y1D/main.jpg
-description: "A local 1–2 player co-op bullet-hell arena shooter built in Unreal Engine 5. A feature-by-feature case study of the gameplay framework, the player, power-ups, three enemy archetypes, the level and its dynamic difficulty — and what each one taught me about building systems other people can use."
+image: /assets/images/Y1D/main.gif
+description: "A local 1–2 player co-op bullet-hell arena shooter built in Unreal Engine 5, and a quick tour of the systems behind it: the gameplay framework, player and abilities, power-ups, three enemy archetypes, and the three-part level with dynamic difficulty."
 contributions: "Gameplay Framework & Core Architecture | Player: Input, Controller, Pawn, State & Abilities | Collectables & Power-Ups | Enemy AI: Crawler, Scorpion, Mollusk | Level, Spawning & Dynamic Difficulty"
-tools: "Unreal Engine 5, C++, Blueprints, Enhanced Input, Gameplay Tags, Behavior Trees, UMG, Animation Blueprints, Niagara"
+tools: "Unreal Engine 5, C++, Blueprints, Gameplay Framework, Enhanced Input, Gameplay Tags, Behavior Trees, UMG, Animation Blueprints, Niagara"
 team_size: "4 Programmers | 3 Designers | 5 Artists"
 platforms: "Windows"
 duration: "8 Weeks (May 2024 - Jun 2024)"
@@ -18,22 +20,13 @@ duration: "8 Weeks (May 2024 - Jun 2024)"
 
 # 💼 IgKnighted — A Stylized Local Multiplayer Arena Shooter
 
+
+
 [▶️ Play IgKnighted on itch.io](https://buas.itch.io/igknighted)
 
 IgKnighted is a couch co-op arena shooter built in Unreal Engine 5 by a team of twelve over eight weeks. Two players descend through a three-part flooded temple, fight three enemy archetypes, collect power-ups, and share a single pool of five lives. It shipped complete: front-end flow, tutorial, difficulty selection, and real win and lose conditions.
 
 I was one of **four programmers**. This page goes through every major feature I worked on — framework, player, power-ups, enemies, level — and treats each one as an engineering problem: what it had to do, what broke, how I fixed it, and what the fix cost.
-
-| | |
-|---|---|
-| **Role** | Gameplay Programmer |
-| **Team** | 4 programmers, 3 designers, 5 artists |
-| **Duration** | 8 weeks |
-| **Engine** | Unreal Engine 5, C++ and Blueprints |
-| **Platform** | Windows (local 1–2 players) |
-| **Status** | Shipped on itch.io |
-
-*Earlier versions of this write-up: [v1](/projects/year-1-block-d-long-v1/) · [v2](/projects/year-1-block-d-long-v2/).*
 
 ---
 
