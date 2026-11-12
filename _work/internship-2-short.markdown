@@ -50,6 +50,8 @@ This project challenged that assumption. I had to learn that artists and program
 
 **The Collider Editor** is a custom Unity editor tool that lets artists and developers create accurate physics colliders directly from a mesh’s vertices.
 
+<a class="cta-link" href="https://github.com/Jon-Gear/Collider-Editor" target="_blank" rel="noopener">⚙️ See Code Examples</a>
+
 Users can select parts of a model in the Scene view, preview the collider shape, and generate colliders such as:
 
 - boxes;

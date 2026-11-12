@@ -47,6 +47,8 @@ What I was weaker in was understanding the user experience behind internal tools
 
 **The Collider Editor** is a custom Unity editor tool that lets artists and developers **create accurate physics colliders directly from a mesh’s vertices**. Users can select parts of a model in the Scene View, preview the collider shape, and generate colliders such as spheres, capsules, boxes, cylinders, convex hulls, or convex-decomposition collider sets.
 
+<a class="cta-link" href="https://github.com/Jon-Gear/Collider-Editor" target="_blank" rel="noopener">⚙️ See Code Examples</a>
+
 My goal was to **help create colliders as easy as possible**.
 
 This tool was made for **Flashgroup’s 3D artists and programmers**. 

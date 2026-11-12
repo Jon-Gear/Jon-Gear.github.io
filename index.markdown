@@ -5,7 +5,7 @@ layout: default
 # 👋 Hello! I'm Zhangir
 ## Software Engineer | Engine & Tools | Gameplay | Unity | Unreal
 
-🎓 I graduated from **Breda University of Applied Sciences** in Creative Media and Game Technologies.
+🎓 I graduated from **Breda University of Applied Sciences** in Creative Media and Game Technologies. [View my diploma](/assets/HBO%20Bachelor%20Creative%20Media%20and%20Game%20Technologies.pdf)
 
 💼 I'm currently seeking new job opportunities in the game industry!
 

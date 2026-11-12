@@ -52,6 +52,8 @@ I was a motivated programming student with a strong interest in tools, but no pr
 
 **VR Full-Body Tracking** is a Unity-based tracking solution that connects real body trackers to a Meta Quest VR application and uses them to drive a player avatar in real time.
 
+<a class="cta-link" href="https://github.com/Jon-Gear/Full-Body-Tracking-VR-Unity" target="_blank" rel="noopener">⚙️ See Code Examples</a>
+
 The system receives **position and rotation data from HaritoraX2 trackers through OSC**, updates tracker target objects inside Unity, and applies those targets to a humanoid character using **Unity’s Animator IK system**. This allowed the player’s legs and body movement to be represented inside the SportsImproVR tennis application.
 
 My goal was to **bring the player’s real full-body movement into VR sports training**.
